@@ -1,0 +1,40 @@
+[user]
+    name = Kévin Sztern
+    email = sztern.kevin@gmail.com
+
+[color]
+    ui = true
+
+[core]
+    excludesfile = ~/.gitignore
+
+[alias]
+    st = status
+    ci = commit -a
+    b = branch
+    bt = branch --track
+    co = checkout
+    cob = checkout -b
+    cobt = checkout -b --track
+    d = diff
+    l = log
+    lp = log -p
+    ls = log --stat
+    lr = log --raw
+    lg = log --graph
+    lo = log --pretty=oneline
+    f = fetch
+    ph = push
+    pl = pull
+    r = remote
+    rs = remote show
+    ra = remote add
+    rd = remote del
+    lsf = ls-files
+    m = merge
+    cl = clean -fd
+    t = tag
+    ui = update-index
+
+[pager]
+    status = false
