@@ -1,5 +1,9 @@
 # The following lines were added by compinstall
 
+autoload -U colors && colors
+
+setopt prompt_subst
+
 zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' menu select=1
@@ -18,15 +22,31 @@ unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+# VCS Support
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:*' actionformats \
+    '%F{14}[%F{11}%b%F{11}|%F{9}%a%F{11}]%f'
+zstyle ':vcs_info:*' formats \
+    '%F{14}[%F{11}%b%F{14}]%f'
+zstyle ':vcs_info:*' enable git hg
+
+precmd ()
+{
+    vcs_info
+}
+
+
 # Aliases
 alias ls='ls --color=auto'
 alias rat='tmux attach-session'
 
 # Exports
-export PROMPT='%n% @%m% [%~% ]$ '
-export RPROMT=''
+export PROMPT='%F{12}%n% %F{75}@%F{12}%m% %F{75}[%F{214}%~% %F{75}]%F{75}$%f '
+export RPROMPT='${vcs_info_msg_0_}'
 export PAGER='most'
 export NNTPSERVER='news.epita.fr'
 export PATH="/sbin:$PATH"
 export EPITA=1
 # export LANG='en_US.utf8'
+[ -n "$TMUX" ] && export TERM=screen-256color
