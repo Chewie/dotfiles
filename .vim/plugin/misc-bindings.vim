@@ -16,5 +16,6 @@ vnoremap ; :
 nnoremap <Space> <C-w>
 nnoremap <Space><Space> <C-w>w
 
+nnoremap <S-Tab> :%s/\v
 nnoremap <Tab> :s/\v
-vnoremap <S-Tab> :s/\v
+vnoremap <Tab> :s/\v
