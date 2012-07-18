@@ -3,6 +3,7 @@
 autoload -U colors && colors
 
 setopt prompt_subst
+setopt glob_dots
 
 zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' list-colors ''
