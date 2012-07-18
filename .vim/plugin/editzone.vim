@@ -1,11 +1,7 @@
 " editzone.vim
 " Parameters related to the edition zone
 
-if version < 703
-  set number
-else
-  set relativenumber
-endif
+set number
 
 set laststatus=2
 set statusline=%f\ %l\|%c\ %m%=%p%%\ (%Y%R)
