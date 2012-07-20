@@ -5,7 +5,7 @@ if has('syntax')
     syntax on
     set background=dark
 
-    colorscheme evening
+    colorscheme torte
 
     " Python specific options
     let python_highlight_builtins = 1
