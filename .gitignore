@@ -2,3 +2,4 @@
 *.a
 *.so
 .ssh/*
+.vim/.netrwhist
