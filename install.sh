@@ -4,5 +4,8 @@
 ## its directory (ie : ./install.sh)
 ## This is a quick and dirty script, don't expect anything fancy from it
 
+setopt extendedglob
 setopt glob_dots
-ln -s -t $HOME *~.git
+cd $HOME
+
+ln -s $OLDPWD/*~*.git~*install.sh .
