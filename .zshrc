@@ -41,6 +41,7 @@ precmd ()
 # Aliases
 alias ls='ls --color=auto'
 alias rat='tmux attach-session'
+alias se='sudoedit'
 
 # Exports
 export PROMPT='%F{12}%n% %F{75}@%F{12}%m% %F{75}[%F{214}%~% %F{75}]%F{75}$%f '
