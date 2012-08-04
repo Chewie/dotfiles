@@ -8,9 +8,6 @@ set nocompatible
 " Reload a file when it is changed from the outside
 set autoread
 
-" Set "," as map leader
-let mapleader = ","
-
 " Write files as utf-8
 set fileencoding=utf-8
 
@@ -149,8 +146,12 @@ set cinoptions=(0,u0,U0
 " Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+" Set "," as map leader
+let mapleader = ","
+
 " 'very magic' regexp searches
 nnoremap / /\v
+nnoremap ? ?\v
 
 " 'very magic' regexp substitutions
 cnoremap %s %s/\v
@@ -167,6 +168,10 @@ nnoremap Y y$
 
 " Write as root, when you forgot to sudoedit
 cmap w!! w !sudo tee % >/dev/null
+
+" map ; to :
+nnoremap ; :
+vnoremap ; :
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Persistence options
