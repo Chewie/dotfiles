@@ -1,4 +1,20 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""
+" Description:
+"   This is the .vimrc file
+"
+" Maintainer:
+"   Kévin "Chewie" Sztern
+"   <chewie@deliciousmuffins.net>
+"
+" Complete_version:
+"   You can find the complete configuration,
+"   including all the plugins used, here:
+"   https://bitbucket.org/chewiebeardy/configs
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
 " General parameters
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
