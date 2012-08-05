@@ -49,6 +49,10 @@ set noswapfile
 " Hide buffers instead of closing them
 set hidden
 
+" Set the time (in milliseconds) spent idle until various actions occur
+" In this configuration, it is particularly useful for the tagbar plugin
+set updatetime=500
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " User interface
 """"""""""""""""""""""""""""""""""""""""""""""""""
