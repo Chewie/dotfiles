@@ -151,14 +151,14 @@ set gdefault
 " The length of a tab
 set tabstop=8
 
-" Number of spaces in a 'fake' tab
-set softtabstop=2
+" The number of spaces inserted when you press tab
+set softtabstop=4
 
-" The number of spaces inserted/removed when using <, >, or =
-set shiftwidth=2
+" The number of spaces inserted/removed when using < or >
+set shiftwidth=4
 
-" Don't use spaces for tabs
-set noexpandtab
+" Insert spaces instead of tabs
+set expandtab
 
 " When tabbing manually, use shiftwidth instead of tabstop and softtabstop
 set smarttab
