@@ -278,3 +278,5 @@ au Bufnewfile,Bufread *.hh set ft=cpp
 " Toggle Tagbar
 noremap <leader>tt :TagbarToggle<cr>
 
+" Toggle NERDTree
+noremap <leader>nt :NERDTreeToggle<cr>
