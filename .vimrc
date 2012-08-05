@@ -25,6 +25,9 @@ set nobackup
 " Disable swapfiles too
 set noswapfile
 
+" Hide buffers instead of closing them
+set hidden
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " User interface
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -57,9 +60,6 @@ set wildmenu
 
 " Set completion behavior, see :help wildmode for details
 set wildmode=list:longest:full
-
-" Hide buffers instead of closing them
-set hidden
 
 " Disable bell completely
 set visualbell
@@ -177,6 +177,9 @@ noremap ; :
 
 " Call :make
 noremap <leader>m :make<cr>
+
+" Toggle Tagbar
+noremap <leader>tt :TagbarToggle<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Persistence options
