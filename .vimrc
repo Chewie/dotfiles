@@ -11,6 +11,10 @@
 "   including all the plugins used, here:
 "   https://bitbucket.org/chewiebeardy/configs
 "
+" Acknowledgements:
+"   Several elements of this .vimrc come from Pierre Bourdon's config
+"   You can find it here: https://bitbucket.org/delroth/configs/
+"
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 
