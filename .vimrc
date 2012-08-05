@@ -32,13 +32,14 @@ set nocompatible
 " Reload a file when it is changed from the outside
 set autoread
 
+" Write the file when we leave the buffer
+set autowrite
+
 " Write files as utf-8
 set fileencoding=utf-8
 
-" Enable filetype stuff
-filetype on
-filetype plugin on
-filetype indent on
+" Enable filetype detection for plugins and indentation options
+filetype plugin indent on
 
 " Disable backups, we have source control for that
 set nobackup
@@ -200,8 +201,21 @@ cnoremap w!! w !sudo tee % >/dev/null
 " map ; to :
 noremap ; :
 
-" Call :make
-noremap <leader>m :make<cr>
+" Open the quickfix window if there are errors, or close it if there are no
+" errors left
+noremap <leader>cw :botright :cw<cr>
+
+" The ultimate mapping for edit/compile/edit workflow
+" This mapping runs :make silently, then opens the quickfix window
+" if there are errors, or close it if it was already opened and there are
+" no more errors
+noremap <leader>m :silent! :make \| :redraw! \| :botright :cw<cr>
+
+" Jump to next error
+noremap <leader>cn :cn<cr>
+
+" Jump to previous error
+noremap <leader>cp :cp<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Persistence options
