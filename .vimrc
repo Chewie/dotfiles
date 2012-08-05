@@ -18,6 +18,7 @@
 " General parameters
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+" /!\ Comment this line if you only have the .vimrc /!\
 " Load all the plugins in .vim/bundle
 call pathogen#infect()
 
@@ -194,9 +195,6 @@ noremap ; :
 " Call :make
 noremap <leader>m :make<cr>
 
-" Toggle Tagbar
-noremap <leader>tt :TagbarToggle<cr>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Persistence options
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -249,3 +247,12 @@ au Bufnewfile,Bufread *.h set ft=c
 
 " Set filetype of C++ headers to cpp
 au Bufnewfile,Bufread *.hh set ft=cpp
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin mappings and options
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" /!\ Comment these if you only have the .vimrc! /!\
+
+" Toggle Tagbar
+noremap <leader>tt :TagbarToggle<cr>
+
