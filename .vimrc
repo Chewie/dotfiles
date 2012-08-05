@@ -2,6 +2,9 @@
 " General parameters
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+" Load all the plugins in .vim/bundle
+call pathogen#infect()
+
 " Disable vi compatibility mode
 set nocompatible
 
@@ -157,7 +160,7 @@ nnoremap ? ?\v
 cnoremap %s %s/\v
 
 " Toggle paste mode
-map <leader>pp :setlocal paste!<cr>
+noremap <leader>pp :setlocal paste!<cr>
 
 " Move between rows in wrapped lines
 nnoremap j gj
@@ -167,11 +170,13 @@ nnoremap k gk
 nnoremap Y y$
 
 " Write as root, when you forgot to sudoedit
-cmap w!! w !sudo tee % >/dev/null
+cnoremap w!! w !sudo tee % >/dev/null
 
 " map ; to :
-nnoremap ; :
-vnoremap ; :
+noremap ; :
+
+" Call :make
+noremap <leader>m :make<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Persistence options
