@@ -6,6 +6,9 @@
 
 setopt extendedglob
 setopt glob_dots
+
+git submodule init
+git submodule update
 cd $HOME
 
 ln -s $OLDPWD/*~*.git~*install.sh .
