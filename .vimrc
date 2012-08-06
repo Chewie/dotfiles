@@ -211,11 +211,25 @@ noremap <leader>cw :botright :cw<cr>
 " no more errors
 noremap <leader>m :silent! :make \| :redraw! \| :botright :cw<cr>
 
-" Jump to next error
+" Jump to next error on quickfix list
 noremap <leader>cn :cn<cr>
 
-" Jump to previous error
+" Jump to previous error on quickfix list
 noremap <leader>cp :cp<cr>
+
+" Jump to first error on quickfix list
+noremap <leader>cf :cfirst<cr>
+
+" Jump to next error on location list
+noremap <leader>ln :lnext<cr>
+
+" Jump to previous error on location list
+noremap <leader>lp :lp<cr>
+
+" Jump to first error on location list
+noremap <leader>lf :lfirst<cr>
+
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Persistence options
@@ -280,3 +294,16 @@ noremap <leader>tt :TagbarToggle<cr>
 
 " Toggle NERDTree
 noremap <leader>nt :NERDTreeToggle<cr>
+
+" Syntastic mappings and options
+"""""""""""""""""""""""""""""""""
+" Open the syntax errors location window
+noremap <leader>se :Errors<cr>
+
+" Set the C and C++ compilers used for syntax checking with syntastic
+let g:syntastic_cpp_compiler='clang++'
+
+" /!\     This option currently only exists on my fork of syntastic!    /!\
+" /!\     Don't set it if you got syntastic from the main repo          /!\
+" /!\ You can find the fork here : https://github.com/Chewie/syntastic  /!\
+let g:syntastic_c_compiler='clang'
