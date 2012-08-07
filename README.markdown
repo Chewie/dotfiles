@@ -11,12 +11,12 @@ If you don't know what git submodules are, you can find information
 To install the dotfiles, run `./install.zsh` in the root of the repository.
 The install script assumes you're not running it from another directory, it
 won't work if you do so!
-The script initiates the submodules in case you haven't clone the repository
+The script initiates the submodules in case you haven't cloned the repository
 with the --recursive option, then links the dotfiles.
 
 The install script makes simlink from the repository to your home directory,
 the purpose being to ease updating. That means you musn't remove the
-repository, or you'll hanve dangling simlinks!
-If you don't want that behaviour, copy the files yourselves from the
+repository, or you'll have dangling simlinks!
+If you don't want that behaviour, copy the files yourself from the
 repository, but don't forget to run
 `git submodule init && git submodule update` first!
