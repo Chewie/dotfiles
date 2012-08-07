@@ -125,6 +125,9 @@ set textwidth=79
 highlight ExtraWhitespace ctermbg=darkgreen
 match ExtraWhitespace /\s\+$/
 
+" Disable preview window on completion
+set completeopt=menu,longest
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Search options
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -307,3 +310,6 @@ let g:syntastic_cpp_compiler='clang++'
 " /!\     Don't set it if you got syntastic from the main repo          /!\
 " /!\ You can find the fork here : https://github.com/Chewie/syntastic  /!\
 let g:syntastic_c_compiler='clang'
+
+" Use libclang.so instead of the clang executable for clang_complete
+let g:clang_use_library=1
