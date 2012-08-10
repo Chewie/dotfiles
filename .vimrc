@@ -22,12 +22,18 @@
 " General parameters
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+" Disable vi compatibility mode
+set nocompatible
+
+" Pathogen requires the ftplugins to be disabled
+filetype plugin off
+
 " /!\ Comment this line if you only have the .vimrc /!\
 " Load all the plugins in .vim/bundle
 call pathogen#infect()
 
-" Disable vi compatibility mode
-set nocompatible
+" Enable filetype detection for plugins and indentation options
+filetype plugin indent on
 
 " Reload a file when it is changed from the outside
 set autoread
@@ -37,9 +43,6 @@ set autowrite
 
 " Write files as utf-8
 set fileencoding=utf-8
-
-" Enable filetype detection for plugins and indentation options
-filetype plugin indent on
 
 " Disable backups, we have source control for that
 set nobackup
@@ -152,6 +155,8 @@ set gdefault
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " The length of a tab
+" This is for documentation purposes only,
+" do not change the default value of 8, ever.
 set tabstop=8
 
 " The number of spaces inserted when you press tab
@@ -170,9 +175,8 @@ set smarttab
 " When filetype detection didn't find a fancy indentation scheme
 set autoindent
 
-" Correctly indent continuaton lines when using cindent
-" See http://vim.wikia.com/wiki/VimTip1626#Continuation_lines
-set cinoptions=(0,u0,U0
+" This one is complicated. See :help cinoptions-values for details
+set cinoptions=(0,u0,U0,t0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -278,8 +282,8 @@ function Insert_header_guards()
     exe "normal 4G"
 endfunction
 
-au Bufnewfile *.h call Insert_header_guards()
-au Bufnewfile *.hh call Insert_header_guards()
+"au Bufnewfile *.h call Insert_header_guards()
+"au Bufnewfile *.hh call Insert_header_guards()
 
 " Set filetype of C headers to c instead of cpp
 au Bufnewfile,Bufread *.h set ft=c
@@ -311,5 +315,12 @@ let g:syntastic_cpp_compiler='clang++'
 " /!\ You can find the fork here : https://github.com/Chewie/syntastic  /!\
 let g:syntastic_c_compiler='clang'
 
+" Check headers too, because why wouldn't we?
+let g:syntastic_c_check_header=1
+let g:syntastic_cpp_check_header=1
+
 " Use libclang.so instead of the clang executable for clang_complete
 let g:clang_use_library=1
+
+let g:clang_snippets=1
+let g:clang_snippets_engine="ultisnips"
