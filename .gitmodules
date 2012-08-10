@@ -19,3 +19,9 @@
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule ".vim/bundle/ultisnips"]
+	path = .vim/bundle/ultisnips
+	url = git://github.com/SirVer/ultisnips.git
+[submodule ".vim/UltiSnips"]
+	path = .vim/UltiSnips
+	url = git://github.com/Chewie/EPITA-snippets.git
