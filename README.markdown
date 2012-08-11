@@ -28,7 +28,7 @@ repository, but don't forget to run
 Vim plugins
 ===========
 
-My vim setup uses the follow plugins :
+My vim setup uses the following plugins :
 
 * [Clang complete](https://github.com/Rip-Rip/clang_complete) : C/C++
   completion plugin using the clang compiler
