@@ -176,7 +176,7 @@ set smarttab
 set autoindent
 
 " This one is complicated. See :help cinoptions-values for details
-set cinoptions=(0,u0,U0,t0
+set cinoptions=(0,u0,U0,t0,g0,N-s
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
