@@ -282,6 +282,9 @@ noremap <leader>tt :TagbarToggle<cr>
 " Toggle NERDTree
 noremap <leader>nt :NERDTreeToggle<cr>
 
+" Align all variable names with tabular
+noremap <leader>ta :Tab / [a-zA-Z_]*;<cr>
+
 " Syntastic mappings and options
 """""""""""""""""""""""""""""""""
 " Open the syntax errors location window
@@ -298,6 +301,9 @@ let g:syntastic_c_compiler='clang'
 " Check headers too, because why wouldn't we?
 let g:syntastic_c_check_header=1
 let g:syntastic_cpp_check_header=1
+
+" Clang_complete options
+" ----------------------
 
 " Use libclang.so instead of the clang executable for clang_complete
 let g:clang_use_library=1
