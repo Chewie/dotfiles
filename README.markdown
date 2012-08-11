@@ -1,8 +1,11 @@
+About
+=====
+
 This is the repository containing my dotfiles, most notably my vim
 configuration.
 
 Installation
-------------
+============
 
 This repository uses git submodules to track vim plugins.
 If you don't know what git submodules are, you can find information
@@ -20,3 +23,29 @@ repository, or you'll have dangling simlinks!
 If you don't want that behaviour, copy the files yourself from the
 repository, but don't forget to run
 `git submodule init && git submodule update` first!
+
+
+Vim plugins
+===========
+
+My vim setup uses the follow plugins :
+
+* [Clang complete](https://github.com/Rip-Rip/clang_complete) : C/C++
+  completion plugin using the clang compiler
+* [CtrlP](https://github.com/kien/ctrlp.vim/) : fuzzy file finder
+* [Fugitive](https://github.com/tpope/vim-fugitive) : git wrapper
+* [NERDCommenter](https://github.com/scrooloose/nerdcommenter) : quickly
+  comment/decomment code
+* [NERDTree](https://github.com/scrooloose/nerdtree) : filesystem explorer
+* [Sparkup](https://github.com/rstacruz/sparkup) : quick HTML creation
+* [Surround](https://github.com/tpope/vim-surround) : command related to
+  surroundings
+* [Syntastic](https://github.com/scrooloose/syntastic) : syntax checking on the
+  fly
+* [Tabular](https://github.com/godlygeek/tabular) : quick alignment
+* [Tagbar](https://github.com/majutsushi/tagbar) : tag browser
+* [UltiSnips](https://github.com/SirVer/ultisnips) : snippets engine
+* [Unimpaired](https://github.com/tpope/vim-unimpaired) : mappings for commands
+  that come in pair
+* [Repeat](https://github.com/tpope/vim-repeat) : repeat Surround and
+  Unimpaired commands with .
