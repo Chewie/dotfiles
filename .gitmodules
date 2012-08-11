@@ -25,3 +25,6 @@
 [submodule ".vim/UltiSnips"]
 	path = .vim/UltiSnips
 	url = git://github.com/Chewie/EPITA-snippets.git
+[submodule ".vim/bundle/ctrlp"]
+	path = .vim/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
