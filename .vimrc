@@ -218,26 +218,6 @@ noremap <leader>cw :botright :cw<cr>
 " no more errors
 noremap <leader>m :silent! :make \| :redraw! \| :botright :cw<cr>
 
-" Jump to next error on quickfix list
-noremap <leader>cn :cn<cr>
-
-" Jump to previous error on quickfix list
-noremap <leader>cp :cp<cr>
-
-" Jump to first error on quickfix list
-noremap <leader>cf :cfirst<cr>
-
-" Jump to next error on location list
-noremap <leader>ln :lnext<cr>
-
-" Jump to previous error on location list
-noremap <leader>lp :lp<cr>
-
-" Jump to first error on location list
-noremap <leader>lf :lfirst<cr>
-
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Persistence options
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -322,5 +302,6 @@ let g:syntastic_cpp_check_header=1
 " Use libclang.so instead of the clang executable for clang_complete
 let g:clang_use_library=1
 
+" Use snippets to complete
 let g:clang_snippets=1
 let g:clang_snippets_engine="ultisnips"
