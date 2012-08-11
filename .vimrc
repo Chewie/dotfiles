@@ -260,6 +260,9 @@ noremap <leader>nt :NERDTreeToggle<cr>
 " Align all variable names with tabular
 noremap <leader>ta :Tab / [a-zA-Z_]*;<cr>
 
+" Launch fugitive's gstatus
+noremap <leader>gs :Gstatus<cr>
+
 " Syntastic mappings and options
 """""""""""""""""""""""""""""""""
 " Open the syntax errors location window
