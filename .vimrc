@@ -247,31 +247,6 @@ if version >= 703
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" C/C++ related options
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Automatically insert guard on new headers
-" This function comes from Pierre Bourdon's vimrc
-function Insert_header_guards()
-    let basename=substitute(@%, "[^/]*/", "", "g")
-    let underscored=tr(basename, ".", "_")
-    let const=substitute(underscored, ".*", "\\U\\0", "")."_"
-    exe "normal i#ifndef ".const."\n\e"
-    exe "normal i# define ".const."\n\n\n\n\e"
-    exe "normal i#endif /"."* !".const." */\e"
-    exe "normal 4G"
-endfunction
-
-"au Bufnewfile *.h call Insert_header_guards()
-"au Bufnewfile *.hh call Insert_header_guards()
-
-" Set filetype of C headers to c instead of cpp
-au Bufnewfile,Bufread *.h set ft=c
-
-" Set filetype of C++ headers to cpp
-au Bufnewfile,Bufread *.hh set ft=cpp
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin mappings and options
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " /!\ Comment these if you only have the .vimrc! /!\
