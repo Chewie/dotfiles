@@ -15,4 +15,4 @@ git submodule update
 
 # Create symlinks
 cd $HOME
-ln -s $OLDPWD/*~*.git~*.gitmodules~*install.sh~*README.markdown .
+ln -s $OLDPWD/*~*.git~*.gitmodules~*install.zsh~*README.markdown .
