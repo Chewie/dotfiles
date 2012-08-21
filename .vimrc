@@ -285,3 +285,5 @@ let g:clang_use_library=1
 " Use snippets to complete
 let g:clang_snippets=1
 let g:clang_snippets_engine="ultisnips"
+
+let g:Powerline_symbols='fancy'

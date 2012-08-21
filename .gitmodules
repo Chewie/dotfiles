@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/powerline"]
 	path = .vim/bundle/powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule ".fonts/dejavu-powerline"]
+	path = .fonts/dejavu-powerline
+	url = git://gist.github.com/1630581.git
