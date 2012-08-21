@@ -37,6 +37,7 @@ My vim setup uses the following plugins :
 * [NERDCommenter](https://github.com/scrooloose/nerdcommenter) : quickly
   comment/decomment code
 * [NERDTree](https://github.com/scrooloose/nerdtree) : filesystem explorer
+* [Powerline](https://github.com/Lokaltog/vim-powerline) : fancy status line
 * [Sparkup](https://github.com/rstacruz/sparkup) : quick HTML creation
 * [Surround](https://github.com/tpope/vim-surround) : command related to
   surroundings
