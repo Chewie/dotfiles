@@ -99,9 +99,9 @@ if version >= 703
   set colorcolumn=+1
 endif
 
-" From Pierre Bourdon's vimrc : display tabs and EOL visually
+" Display whitespace characters
 set list
-set listchars=tab:.\ ,eol:¬
+set listchars=tab:>\ ,eol:¬,trail:·,nbsp:¤
 
 " Enables syntax highlighting
 syntax on
@@ -123,10 +123,6 @@ set wrap
 
 " Wrap on column 80
 set textwidth=79
-
-" Highlight trailing whitespaces
-highlight ExtraWhitespace ctermbg=darkgreen
-match ExtraWhitespace /\s\+$/
 
 " Disable preview window on completion
 set completeopt=menu,longest
