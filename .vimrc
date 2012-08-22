@@ -201,7 +201,7 @@ nnoremap k gk
 nnoremap Y y$
 
 " Write as root, when you forgot to sudoedit
-cnoremap w!! w !sudo tee % >/dev/null
+cnoreabbrev w!! w !sudo tee % >/dev/null
 
 " map ; to :
 noremap ; :
