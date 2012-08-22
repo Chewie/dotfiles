@@ -101,7 +101,7 @@ endif
 
 " Display whitespace characters
 set list
-set listchars=tab:>\ ,eol:¬,trail:·,nbsp:¤
+set listchars=tab:>─,eol:¬,trail:\ ,nbsp:¤
 
 set fillchars=vert:│
 
