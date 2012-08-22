@@ -103,14 +103,16 @@ endif
 set list
 set listchars=tab:>\ ,eol:¬,trail:·,nbsp:¤
 
+set fillchars=vert:│
+
 " Enables syntax highlighting
 syntax on
 
-" Dark background is easier to the eye, at least for me.
-set background=dark
+" Use a slightly darker background color to differentiate with the status line
+let g:jellybeans_background_color_256='232'
 
 " Feel free to switch to another colorscheme
-colorscheme torte
+colorscheme jellybeans
 
 " Allow mouse use in vim
 set mouse=a
@@ -286,4 +288,5 @@ let g:clang_use_library=1
 let g:clang_snippets=1
 let g:clang_snippets_engine="ultisnips"
 
+" Use the patched font for the fancy status line
 let g:Powerline_symbols='fancy'
