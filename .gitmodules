@@ -43,3 +43,6 @@
 [submodule ".fonts/dejavu-powerline"]
 	path = .fonts/dejavu-powerline
 	url = git://gist.github.com/1630581.git
+[submodule ".vim/bundle/jellybeans"]
+	path = .vim/bundle/jellybeans
+	url = git://github.com/nanotech/jellybeans.vim.git
