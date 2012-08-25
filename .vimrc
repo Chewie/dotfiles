@@ -261,8 +261,11 @@ noremap <leader>ta :Tab / [a-zA-Z_]*;<cr>
 " Launch fugitive's gstatus
 noremap <leader>gs :Gstatus<cr>
 
+" Use the patched font for the fancy status line
+let g:Powerline_symbols='fancy'
+
 " Syntastic mappings and options
-"""""""""""""""""""""""""""""""""
+" -------------------------------
 " Open the syntax errors location window
 noremap <leader>se :Errors<cr>
 
@@ -281,12 +284,12 @@ let g:syntastic_cpp_check_header=1
 " Clang_complete options
 " ----------------------
 
+" Don't complete unless asked to
+let g:clang_complete_auto=0
+
 " Use libclang.so instead of the clang executable for clang_complete
 let g:clang_use_library=1
 
 " Use snippets to complete
 let g:clang_snippets=1
 let g:clang_snippets_engine="ultisnips"
-
-" Use the patched font for the fancy status line
-let g:Powerline_symbols='fancy'
