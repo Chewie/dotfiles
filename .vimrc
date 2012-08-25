@@ -9,7 +9,7 @@
 " Complete_version:
 "   You can find the complete configuration,
 "   including all the plugins used, here:
-"   https://bitbucket.org/chewiebeardy/configs
+"   https://github.com/Chewie/configs
 "
 " Acknowledgements:
 "   Several elements of this .vimrc come from Pierre Bourdon's config
