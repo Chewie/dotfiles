@@ -51,4 +51,3 @@ export NNTPSERVER='news.epita.fr'
 export PATH="/sbin:$PATH"
 export EPITA=1
 export EDITOR='vim'
-[ -n "$TMUX" ] && export TERM=screen-256color
