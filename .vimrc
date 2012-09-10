@@ -132,6 +132,9 @@ set textwidth=79
 " Disable preview window on completion
 set completeopt=menu,longest
 
+" Highlight current line
+set cursorline
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Search options
 """"""""""""""""""""""""""""""""""""""""""""""""""
