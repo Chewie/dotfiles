@@ -41,9 +41,6 @@ set autoread
 " Write the file when we leave the buffer
 set autowrite
 
-" Write files as utf-8
-set fileencoding=utf-8
-
 " Disable backups, we have source control for that
 set nobackup
 
