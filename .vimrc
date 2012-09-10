@@ -108,6 +108,9 @@ set fillchars=vert:│
 " Enables syntax highlighting
 syntax on
 
+" Enable Doxygen highlighting
+let g:load_doxygen_syntax=1
+
 " Use a slightly darker background color to differentiate with the status line
 let g:jellybeans_background_color_256='232'
 
