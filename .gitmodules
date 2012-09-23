@@ -46,6 +46,3 @@
 [submodule ".vim/bundle/jellybeans"]
 	path = .vim/bundle/jellybeans
 	url = git://github.com/nanotech/jellybeans.vim.git
-[submodule ".vim/bundle/a"]
-	path = .vim/bundle/a
-	url = git://github.com/vim-scripts/a.vim.git
