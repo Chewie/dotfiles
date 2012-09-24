@@ -49,5 +49,4 @@ export RPROMPT='${vcs_info_msg_0_}'
 export PAGER='most'
 export NNTPSERVER='news.epita.fr'
 export PATH="/sbin:$PATH"
-export EPITA=1
 export EDITOR='vim'
