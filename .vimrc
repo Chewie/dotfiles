@@ -263,7 +263,7 @@ noremap <leader>tt :TagbarToggle<cr>
 noremap <leader>nt :NERDTreeToggle<cr>
 
 " Align all variable names with tabular
-noremap <leader>ta :Tab / [a-zA-Z_]*;<cr>
+noremap <leader>ta :Tab / [^ ]*;<cr>
 
 " Launch fugitive's gstatus
 noremap <leader>gs :Gstatus<cr>
