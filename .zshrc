@@ -44,7 +44,7 @@ alias rat='tmux attach-session'
 alias se='sudoedit'
 
 # Exports
-export PROMPT='%F{12}%n% %F{75}@%F{12}%m% %F{75}[%F{214}%~% %F{75}]%F{75}$%f '
+export PROMPT='%F{207}%n% %F{75}@%F{207}%m% %F{75}[%F{214}%~% %F{75}]%F{75}$%f '
 export RPROMPT='${vcs_info_msg_0_}'
 export PAGER='most'
 export NNTPSERVER='news.epita.fr'
