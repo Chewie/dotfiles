@@ -201,8 +201,8 @@ cnoremap %s %s/\v
 noremap <leader>pp :setlocal paste!<cr>
 
 " Move between rows in wrapped lines
-nnoremap j gj
-nnoremap k gk
+noremap j gj
+noremap k gk
 
 " Yank from cursor to end of line, to be consistent with C and D
 nnoremap Y y$
