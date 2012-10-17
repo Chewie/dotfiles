@@ -30,8 +30,6 @@ Vim plugins
 
 My vim setup uses the following plugins :
 
-* [Clang complete](https://github.com/Rip-Rip/clang_complete) : C/C++
-  completion plugin using the clang compiler
 * [CtrlP](https://github.com/kien/ctrlp.vim/) : fuzzy file finder
 * [Fugitive](https://github.com/tpope/vim-fugitive) : git wrapper
 * [NERDCommenter](https://github.com/scrooloose/nerdcommenter) : quickly
