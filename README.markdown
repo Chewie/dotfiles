@@ -41,10 +41,15 @@ My vim setup uses the following plugins :
   surroundings
 * [Syntastic](https://github.com/scrooloose/syntastic) : syntax checking on the
   fly
-* [Tabular](https://github.com/godlygeek/tabular) : quick alignment
 * [Tagbar](https://github.com/majutsushi/tagbar) : tag browser
 * [UltiSnips](https://github.com/SirVer/ultisnips) : snippets engine
 * [Unimpaired](https://github.com/tpope/vim-unimpaired) : mappings for commands
   that come in pair
 * [Repeat](https://github.com/tpope/vim-repeat) : repeat Surround and
   Unimpaired commands with .
+* [Bundler](https://github.com/tpope/vim-bundler) : bundler integration in vim
+* [Rails](https://github.com/tpope/vim-fugitive) : rails integration in vim
+* [Rainbow parentheses](https://github.com/kien/rainbow\_parentheses.vim)
+  Parentheses coloration
+* [Easymotion](https://github.com/Lokaltog/vim-easymotion) Visual motion
+  selector
