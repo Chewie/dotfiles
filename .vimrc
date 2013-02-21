@@ -256,6 +256,9 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " /!\ Comment these if you only have the .vimrc! /!\
 
+" Toggle Rainbow parentheses
+au VimEnter * RainbowParenthesesToggleAll
+
 " Toggle Tagbar
 noremap <leader>tt :TagbarToggle<cr>
 

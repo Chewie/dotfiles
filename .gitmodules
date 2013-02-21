@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/jellybeans"]
 	path = .vim/bundle/jellybeans
 	url = git://github.com/nanotech/jellybeans.vim.git
+[submodule ".vim/bundle/rainbow_parentheses"]
+	path = .vim/bundle/rainbow_parentheses
+	url = git://github.com/kien/rainbow_parentheses.vim.git
