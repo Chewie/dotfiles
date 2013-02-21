@@ -46,3 +46,9 @@
 [submodule ".vim/bundle/rainbow_parentheses"]
 	path = .vim/bundle/rainbow_parentheses
 	url = git://github.com/kien/rainbow_parentheses.vim.git
+[submodule ".vim/bundle/rails"]
+	path = .vim/bundle/rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule ".vim/bundle/bundler"]
+	path = .vim/bundle/bundler
+	url = git://github.com/tpope/vim-bundler.git
