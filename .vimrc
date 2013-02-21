@@ -28,9 +28,37 @@ set nocompatible
 " Pathogen requires the ftplugins to be disabled
 filetype plugin off
 
+
 " /!\ Comment this line if you only have the .vimrc /!\
 " Load all the plugins in .vim/bundle
-call pathogen#infect()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bundles
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tristen/vim-sparkup'
+Bundle 'majutsushi/tagbar'
+Bundle 'SirVer/ultisnips'
+Bundle 'Chewie/EPITA-snippets'
 
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
@@ -111,12 +139,6 @@ syntax on
 
 " Enable Doxygen highlighting
 let g:load_doxygen_syntax=1
-
-" Use a slightly darker background color to differentiate with the status line
-let g:jellybeans_background_color_256='232'
-
-" Feel free to switch to another colorscheme
-colorscheme jellybeans
 
 " Allow mouse use in vim
 set mouse=a
@@ -254,7 +276,15 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin mappings and options
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" /!\ Comment these if you only have the .vimrc! /!\
+
+" Load custom snippets
+let g:UltiSnipsSnippetDirectories = ["bundle/EPITA-snippets"]
+
+" Use a slightly darker background color to differentiate with the status line
+let g:jellybeans_background_color_256='232'
+
+" Feel free to switch to another colorscheme
+colorscheme jellybeans
 
 " Toggle Rainbow parentheses
 au VimEnter * RainbowParenthesesToggleAll
