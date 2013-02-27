@@ -278,7 +278,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Load custom snippets
-let g:UltiSnipsSnippetDirectories = ["bundle/EPITA-snippets"]
+let g:UltiSnipsSnippetDirectories = ["bundle/ultisnips/UltiSnips", "bundle/EPITA-snippets"]
 
 " Use a slightly darker background color to differentiate with the status line
 let g:jellybeans_background_color_256='232'
