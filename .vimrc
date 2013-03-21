@@ -311,11 +311,7 @@ noremap <leader>se :Errors<cr>
 
 " Set the C and C++ compilers used for syntax checking with syntastic
 let g:syntastic_cpp_compiler='clang++'
-
-" /!\     This option currently only exists on my fork of syntastic!    /!\
-" /!\     Don't set it if you got syntastic from the main repo          /!\
-" /!\ You can find the fork here : https://github.com/Chewie/syntastic  /!\
-let g:syntastic_c_compiler='clang'
+let g:syntastic_c_checker='clang'
 
 " Check headers too, because why wouldn't we?
 let g:syntastic_c_check_header=1
