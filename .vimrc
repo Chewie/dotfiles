@@ -26,7 +26,7 @@
 set nocompatible
 
 " Pathogen requires the ftplugins to be disabled
-filetype plugin off
+filetype off
 
 
 " /!\ Comment this line if you only have the .vimrc /!\
