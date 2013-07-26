@@ -311,11 +311,13 @@ noremap <leader>se :Errors<cr>
 
 " Set the C and C++ compilers used for syntax checking with syntastic
 let g:syntastic_cpp_compiler='clang++'
-let g:syntastic_c_checker='clang'
+let g:syntastic_c_compiler='clang'
 
 " Check headers too, because why wouldn't we?
 let g:syntastic_c_check_header=1
 let g:syntastic_cpp_check_header=1
+
+" Default to C++11
 let g:syntastic_cpp_compiler_options = "-std=c++11"
 
 " Clang_complete options
