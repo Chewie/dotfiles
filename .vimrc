@@ -41,9 +41,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-unimpaired'
@@ -53,12 +51,10 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tristen/vim-sparkup'
 Bundle 'majutsushi/tagbar'
 Bundle 'SirVer/ultisnips'
-Bundle 'Chewie/EPITA-snippets'
+Bundle 'vim-pandoc/vim-pandoc-syntax'
+Bundle 'bling/vim-airline'
 
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
@@ -277,9 +273,6 @@ endif
 " Plugin mappings and options
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Load custom snippets
-let g:UltiSnipsSnippetDirectories = ["bundle/ultisnips/UltiSnips", "bundle/EPITA-snippets"]
-
 " Use a slightly darker background color to differentiate with the status line
 let g:jellybeans_background_color_256='232'
 
@@ -288,6 +281,10 @@ colorscheme jellybeans
 
 " Toggle Rainbow parentheses
 au VimEnter * RainbowParenthesesToggleAll
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadChevrons
 
 " Toggle Tagbar
 noremap <leader>tt :TagbarToggle<cr>
@@ -301,8 +298,10 @@ noremap <leader>ta :Tab / [^ ]*;<cr>
 " Launch fugitive's gstatus
 noremap <leader>gs :Gstatus<cr>
 
-" Use the patched font for the fancy status line
-let g:Powerline_symbols='fancy'
+let g:airline_powerline_fonts=1
+
+" Set theme for Airline
+au VimEnter * AirlineTheme powerlineish
 
 " Syntastic mappings and options
 " -------------------------------
@@ -319,16 +318,3 @@ let g:syntastic_cpp_check_header=1
 
 " Default to C++11
 let g:syntastic_cpp_compiler_options = "-std=c++11"
-
-" Clang_complete options
-" ----------------------
-
-" Don't complete unless asked to
-let g:clang_complete_auto=0
-
-" Use libclang.so instead of the clang executable for clang_complete
-let g:clang_use_library=1
-
-" Use snippets to complete
-let g:clang_snippets=1
-let g:clang_snippets_engine="ultisnips"
