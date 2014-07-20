@@ -53,6 +53,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'vim-pandoc/vim-pandoc-syntax'
 Bundle 'bling/vim-airline'
 

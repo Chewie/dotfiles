@@ -50,3 +50,10 @@ export PAGER='most'
 export NNTPSERVER='news.epita.fr'
 export PATH="/sbin:$PATH"
 export EDITOR='vim'
+
+# virtualenvwrapper
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
