@@ -50,6 +50,7 @@ export PAGER='most'
 export NNTPSERVER='news.epita.fr'
 export PATH="/sbin:$PATH"
 export EDITOR='vim'
+export LANG='en_US.UTF-8'
 
 # virtualenvwrapper
 export WORKON_HOME=~/Envs
