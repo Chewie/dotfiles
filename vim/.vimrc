@@ -25,43 +25,47 @@
 " Disable vi compatibility mode
 set nocompatible
 
-" Pathogen requires the ftplugins to be disabled
-filetype off
-
-
-" /!\ Comment this line if you only have the .vimrc /!\
-" Load all the plugins in .vim/bundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" Bundles
+" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-Bundle 'gmarik/vundle'
+" Install vim-plug if we don't already have it
+" Credit to github.com/captbaritone
+if empty(glob("~/.vim/autoload/plug.vim"))
+    " Ensure all needed directories exist  (Thanks @kapadiamush)
+    execute '!mkdir -p ~/.vim/plugged'
+    execute '!mkdir -p ~/.vim/autoload'
+    " Download the actual plugin manager
+    execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-vinegar'
-Bundle 'kien/ctrlp.vim'
-Bundle 'luochen1990/rainbow'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'scrooloose/nerdcommenter'
-"Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
-Bundle 'vim-pandoc/vim-pandoc-syntax'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'pearofducks/ansible-vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'vim-pandoc/vim-pandoc-syntax'
-Bundle 'vim-pandoc/vim-pandoc'
+call plug#begin('~/.vim/plugged')
+
+Plug 'gmarik/vundle'
+
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'kien/ctrlp.vim'
+Plug 'luochen1990/rainbow'
+Plug 'nanotech/jellybeans.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'pearofducks/ansible-vim'
+Plug 'mileszs/ack.vim'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc'
+
+call plug#end()
 
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
