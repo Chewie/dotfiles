@@ -1,6 +1,6 @@
 [user]
     name = Kévin Sztern
-    email = kevin.sztern@infinit.io
+    email = sztern.kevin@gmail.com
 
 [color]
     ui = true
@@ -38,5 +38,6 @@
 
 [pager]
     status = false
+
 [push]
-	default = simple
+    default = simple
