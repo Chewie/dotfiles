@@ -55,7 +55,8 @@ Bundle 'majutsushi/tagbar'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'vim-pandoc/vim-pandoc-syntax'
-Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
