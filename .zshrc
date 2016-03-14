@@ -62,6 +62,3 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-# OPAM configuration
-. /home/chewie/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
