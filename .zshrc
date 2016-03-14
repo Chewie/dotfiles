@@ -54,7 +54,10 @@ export LANG='en_US.UTF-8'
 
 # virtualenvwrapper
 export WORKON_HOME=~/Envs
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]
+then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
