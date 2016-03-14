@@ -57,6 +57,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'vim-pandoc/vim-pandoc-syntax'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
+Bundle 'pearofducks/ansible-vim'
 
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
