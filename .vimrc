@@ -45,11 +45,12 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-vinegar'
 Bundle 'kien/ctrlp.vim'
-Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'luochen1990/rainbow'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'SirVer/ultisnips'
@@ -58,6 +59,9 @@ Bundle 'vim-pandoc/vim-pandoc-syntax'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'pearofducks/ansible-vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'vim-pandoc/vim-pandoc-syntax'
+Bundle 'vim-pandoc/vim-pandoc'
 
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
@@ -189,7 +193,7 @@ set tabstop=8
 set softtabstop=4
 
 " The number of spaces inserted/removed when using < or >
-set shiftwidth=4
+set shiftwidth=2
 
 " Insert spaces instead of tabs
 set expandtab
@@ -283,10 +287,10 @@ let g:jellybeans_background_color_256='232'
 colorscheme jellybeans
 
 " Toggle Rainbow parentheses
-au VimEnter * RainbowParenthesesToggleAll
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggleAll
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 
 " Toggle Tagbar
 noremap <leader>tt :TagbarToggle<cr>
@@ -320,3 +324,5 @@ let g:syntastic_cpp_check_header=1
 
 " Default to C++11
 let g:syntastic_cpp_compiler_options = "-std=c++11"
+
+let g:rainbow_active = 1

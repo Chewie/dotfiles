@@ -54,6 +54,7 @@ export LANG='en_US.UTF-8'
 
 # virtualenvwrapper
 export WORKON_HOME=~/Envs
+
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]
 then
     source /usr/local/bin/virtualenvwrapper.sh
@@ -61,3 +62,12 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# OPAM configuration
+. /home/chewie/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+export NPM_PACKAGES="${HOME}/.npm-packages"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+unset MANPATH
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"

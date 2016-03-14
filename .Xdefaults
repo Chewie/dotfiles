@@ -4,3 +4,4 @@ URxvt*scrollBar: false
 *foreground: White
 URxvt*transparent: true
 URxvt*shading: 20
+URxvt*urgentOnBell: true
