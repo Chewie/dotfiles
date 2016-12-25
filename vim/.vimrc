@@ -42,8 +42,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'gmarik/vundle'
-
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
