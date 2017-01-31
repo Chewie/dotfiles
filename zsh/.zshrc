@@ -37,6 +37,33 @@ precmd ()
     vcs_info
 }
 
+npma ()
+{
+  NPM_ENV=$(npm prefix)
+  export NPM_ENV
+
+  _OLD_NPM_PATH="$PATH"
+  PATH="$(npm bin):$PATH"
+  export PATH
+  _OLD_NPM_PS1="$PS1"
+  PS1="($(basename $NPM_ENV)) $PS1"
+}
+
+npmd ()
+{
+    if ! [ -z "${_OLD_NPM_PATH+_}" ] ; then
+        PATH="$_OLD_NPM_PATH"
+        export PATH
+        unset _OLD_NPM_PATH
+    fi
+    if ! [ -z "${_OLD_NPM_PS1+_}" ] ; then
+        PS1="$_OLD_NPM_PS1"
+        export PS1
+        unset _OLD_NPM_PS1
+    fi
+    unset NPM_ENV
+}
+
 
 # Aliases
 alias ls='ls --color=auto'
