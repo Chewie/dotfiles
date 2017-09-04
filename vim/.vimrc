@@ -256,19 +256,8 @@ noremap <leader>m :silent! :make \| :redraw! \| :botright :cw<cr>
 " Set location of the viminfo file
 set viminfo='20,\"50,<100,n~/.vimtmp/viminfo
 
-" From the Vim wiki
-" http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session
-function! ResCur()
-    if line("'\"") <= line("$")
-        normal! g`"
-        return 1
-    endif
-endfunction
-
-augroup resCur
-    autocmd!
-    autocmd BufWinEnter * call ResCur()
-augroup END
+" See :h last-position-jump
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " Persistent undo
 if version >= 703
