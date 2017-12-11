@@ -23,6 +23,11 @@ unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+# Open command in vim
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
 # VCS Support
 autoload -Uz vcs_info
 
