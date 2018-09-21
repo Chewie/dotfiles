@@ -178,9 +178,6 @@ set incsearch
 " Don't highlight matched strings
 set nohlsearch
 
-" Toggle g option by default on substition
-set gdefault
-
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Indentation options
 """"""""""""""""""""""""""""""""""""""""""""""""""
