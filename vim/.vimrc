@@ -216,13 +216,6 @@ set cinoptions=(0,u0,U0,t0,g0,N-s
 " Set "," as map leader
 let mapleader = ","
 
-" 'very magic' regexp searches
-nnoremap / /\v
-nnoremap ? ?\v
-
-" 'very magic' regexp substitutions
-cnoremap %s %s/\v
-
 " Toggle paste mode
 noremap <leader>pp :setlocal paste!<cr>
 
