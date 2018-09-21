@@ -247,7 +247,7 @@ noremap <leader>cw :botright :cw<cr>
 " This mapping runs :make silently, then opens the quickfix window
 " if there are errors, or close it if it was already opened and there are
 " no more errors
-noremap <leader>m :silent! :make \| :redraw! \| :botright :cw<cr>
+noremap <leader>m :silent! :make! \| :redraw! \| :botright :cw<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Persistence options
