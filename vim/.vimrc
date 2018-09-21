@@ -269,20 +269,8 @@ let g:jellybeans_background_color_256='232'
 " Feel free to switch to another colorscheme
 colorscheme jellybeans
 
-" Toggle Rainbow parentheses
-"au VimEnter * RainbowParenthesesToggleAll
-"au Syntax * RainbowParenthesesLoadRound
-"au Syntax * RainbowParenthesesLoadSquare
-"au Syntax * RainbowParenthesesLoadBraces
-
 " Toggle Tagbar
 noremap <leader>tt :TagbarToggle<cr>
-
-" Toggle NERDTree
-noremap <leader>nt :NERDTreeToggle<cr>
-
-" Align all variable names with tabular
-noremap <leader>ta :Tab / [^ ]*;<cr>
 
 " Launch fugitive's gstatus
 noremap <leader>gs :Gstatus<cr>
