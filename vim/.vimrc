@@ -22,9 +22,6 @@
 " General parameters
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Disable vi compatibility mode
-set nocompatible
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
