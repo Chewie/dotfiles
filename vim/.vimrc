@@ -186,7 +186,7 @@ set tabstop=8
 set softtabstop=4
 
 " The number of spaces inserted/removed when using < or >
-set shiftwidth=2
+set shiftwidth=4
 
 " Insert spaces instead of tabs
 set expandtab
