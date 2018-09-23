@@ -182,11 +182,12 @@ set nohlsearch
 " do not change the default value of 8, ever.
 set tabstop=8
 
-" The number of spaces inserted when you press tab
-set softtabstop=4
-
 " The number of spaces inserted/removed when using < or >
 set shiftwidth=4
+
+" The number of spaces inserted when you press tab.
+" -1 means the same value as shiftwidth
+set softtabstop=-1
 
 " Insert spaces instead of tabs
 set expandtab
