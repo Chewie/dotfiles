@@ -242,7 +242,9 @@ noremap <leader>m :silent! :make! \| :redraw! \| :botright :cw<cr>
 set viminfo='20,\"50,<100,n~/.vimtmp/viminfo
 
 " See :h last-position-jump
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup last_position_jump
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
 
 " Persistent undo
 if version >= 703
