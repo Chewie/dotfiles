@@ -45,10 +45,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'luochen1990/rainbow'
 Plug 'nanotech/jellybeans.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -268,26 +266,3 @@ noremap <leader>tt :TagbarToggle<cr>
 
 " Launch fugitive's gstatus
 noremap <leader>gs :Gstatus<cr>
-
-let g:airline_powerline_fonts=1
-
-" Set theme for Airline
-au VimEnter * AirlineTheme powerlineish
-
-" Syntastic mappings and options
-" -------------------------------
-" Open the syntax errors location window
-noremap <leader>se :Errors<cr>
-
-" Set the C and C++ compilers used for syntax checking with syntastic
-let g:syntastic_cpp_compiler='clang++'
-let g:syntastic_c_compiler='clang'
-
-" Check headers too, because why wouldn't we?
-let g:syntastic_c_check_header=1
-let g:syntastic_cpp_check_header=1
-
-" Default to C++11
-let g:syntastic_cpp_compiler_options = "-std=c++11"
-
-let g:rainbow_active = 1
