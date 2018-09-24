@@ -56,6 +56,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'mileszs/ack.vim'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
+Plug 'romainl/vim-qf'
 
 call plug#end()
 
@@ -266,3 +267,16 @@ noremap <leader>tt :TagbarToggle<cr>
 
 " Launch fugitive's gstatus
 noremap <leader>gs :Gstatus<cr>
+
+" Disable Ack.vim's mappings on the quickfix and location list windows
+" We use vim-qf mappings instead
+let g:ack_apply_qmappings = 0
+let g:ack_apply_lmappings = 0
+let g:qf_mapping_ack_style = 1
+
+" Override unimpaired quickfix and loc-list mappings to use vim-qf wrapparound
+let g:nremap = {"[q": "", "]q": "", "[l": "", "]l": ""}
+nmap [q <Plug>(qf_qf_previous)
+nmap ]q <Plug>(qf_qf_next)
+nmap [l <Plug>(qf_loc_previous)
+nmap ]l <Plug>(qf_loc_next)
