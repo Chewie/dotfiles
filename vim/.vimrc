@@ -229,11 +229,8 @@ noremap ; :
 " errors left
 noremap <leader>cw :botright :cw<cr>
 
-" The ultimate mapping for edit/compile/edit workflow
-" This mapping runs :make silently, then opens the quickfix window
-" if there are errors, or close it if it was already opened and there are
-" no more errors
-noremap <leader>m :silent! :make! \| :redraw! \| :botright :cw<cr>
+" Run make silently, then skip the 'Press ENTER to continue'
+noremap <leader>m :silent! :make! \| :redraw!<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Persistence options
