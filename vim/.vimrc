@@ -117,7 +117,7 @@ set statusline=%f\ %l\|%c\ %m%=%p%%\ (%Y%R)
 set wildmenu
 
 " Set completion behavior, see :help wildmode for details
-set wildmode=list:longest:full
+set wildmode=longest:full,list:full
 
 " Disable bell completely
 set visualbell
