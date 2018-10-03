@@ -1,4 +1,4 @@
-URxvt*font: xft:DejaVu Sans Mono for Powerline:size=10
+URxvt*font: xft:DejaVu Sans Mono:size=10
 URxvt*scrollBar: false
 *background: Black
 *foreground: White
