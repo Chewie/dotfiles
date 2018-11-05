@@ -576,3 +576,16 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+autorun_apps =
+{
+    "nm-applet",
+    "mate-power-manager",
+    "mate-volume-control-applet",
+    "redshift-gtk",
+    "dockd --daemon",
+}
+
+for app = 1, #autorun_apps do
+    awful.spawn(gears.filesystem.get_configuration_dir() .. "autostart.sh " .. autorun_apps[app])
+end
