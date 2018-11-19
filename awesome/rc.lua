@@ -137,6 +137,8 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+mycalendar = awful.widget.calendar_popup.month()
+mycalendar:attach(mytextclock, 'tr')
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -193,15 +195,56 @@ local function set_wallpaper(s)
     end
 end
 
+-- Use different tags depending on the number of connected screens
+
+local function get_tags()
+    if screen:count() == 1 then
+        tags = {
+            for_screen = {
+                { "www", "mail", "3", "chat", "5", "6", "7", "8", "work" },
+            }
+        }
+    elseif screen:count() == 2 then
+        tags = {
+            for_screen = {
+                { "www", "2", "3", "chat", "5", "6", "7", "8", "9" },
+                { "1", "mail", "3", "4", "5", "6", "7", "8", "work" },
+            }
+        }
+    elseif screen:count() == 3 then
+        tags = {
+            for_screen = {
+                { "www", "2", "3", "chat", "5", "6", "7", "8", "9" },
+                { "1", "mail", "3", "4", "5", "6", "7", "8", "work" },
+                { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+            }
+        }
+    end
+    return tags
+end
+
+tags = get_tags()
+
+local function get_screen_from_tag(tag)
+    for s, current_tags in ipairs(tags.for_screen) do
+        for _, t in ipairs(current_tags) do
+            if t == tag then
+                return s
+            end
+        end
+    end
+    return nil
+end
+
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
-awful.screen.connect_for_each_screen(function(s)
+local function setup_screen(s)
     -- Wallpaper
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag(tags.for_screen[s.index], s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -240,7 +283,11 @@ awful.screen.connect_for_each_screen(function(s)
             s.mylayoutbox,
         },
     }
-end)
+end
+
+awful.screen.connect_for_each_screen(setup_screen)
+screen.connect_signal("list", awesome.restart)
+
 -- }}}
 
 -- {{{ Mouse bindings
@@ -349,7 +396,10 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+
+    awful.key({ modkey }, "Print", function() awful.spawn("gnome-screenshot") end,
+              { description = "take a screenshot", group = "misc"})
 )
 
 clientkeys = gears.table.join(
@@ -502,9 +552,15 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = false }
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    -- Set Firefox to always map on the tag named "www"
+     { rule = { class = "Firefox" },
+       properties = { screen = get_screen_from_tag("www"), tag = "www" } },
+
+     { rule = { class = "Franz" },
+       properties = { screen = get_screen_from_tag("chat"), tag = "chat" } },
+
+     { rule = { class = "Thunderbird" },
+       properties = { screen = get_screen_from_tag("mail"), tag = "mail" } },
 }
 -- }}}
 
@@ -576,16 +632,3 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-
-autorun_apps =
-{
-    "nm-applet",
-    "mate-power-manager",
-    "mate-volume-control-applet",
-    "redshift-gtk",
-    "dockd --daemon",
-}
-
-for app = 1, #autorun_apps do
-    awful.spawn(gears.filesystem.get_configuration_dir() .. "autostart.sh " .. autorun_apps[app])
-end
