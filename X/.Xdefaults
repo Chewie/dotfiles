@@ -5,3 +5,4 @@ URxvt*scrollBar: false
 URxvt*transparent: true
 URxvt*shading: 20
 URxvt*urgentOnBell: true
+URxvt*color12: #87afdf
