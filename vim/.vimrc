@@ -27,6 +27,9 @@
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+" TODO: At some point I'll need to switch over to the native Vim 8.0 package
+" feature. Either via manual git subtree management, or maybe through minpac?
+"
 " Install vim-plug if we don't already have it
 " Credit to github.com/captbaritone
 if empty(glob("~/.vim/autoload/plug.vim"))
@@ -44,10 +47,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim' " TODO: I don't really use that anymore.
 Plug 'nanotech/jellybeans.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
@@ -261,12 +263,6 @@ let g:jellybeans_background_color_256='232'
 
 " Feel free to switch to another colorscheme
 colorscheme jellybeans
-
-" Toggle Tagbar
-noremap <leader>tt :TagbarToggle<cr>
-
-" Launch fugitive's gstatus
-noremap <leader>gs :Gstatus<cr>
 
 " Disable Ack.vim's mappings on the quickfix and location list windows
 " We use vim-qf mappings instead
