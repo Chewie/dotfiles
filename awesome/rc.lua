@@ -201,14 +201,14 @@ local function get_tags()
     if screen:count() == 1 then
         tags = {
             for_screen = {
-                { "www", "mail", "3", "chat", "5", "6", "7", "8", "work" },
+                { "www", "mail", "server", "chat", "5", "6", "7", "8", "work" },
             }
         }
     elseif screen:count() == 2 then
         tags = {
             for_screen = {
-                { "www", "2", "3", "chat", "5", "6", "7", "8", "9" },
-                { "1", "mail", "3", "4", "5", "6", "7", "8", "work" },
+                { "www", "server", "3", "chat", "5", "6", "7", "8", "work" },
+                { "1", "mail", "3", "4", "5", "6", "7", "8", "9" },
             }
         }
     elseif screen:count() == 3 then
