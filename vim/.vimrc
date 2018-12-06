@@ -6,6 +6,9 @@
 "   Kévin "Chewie" Sztern
 "   <chewie@deliciousmuffins.net>
 "
+" Launch fugitive's gstatus
+noremap <leader>gs :Gstatus<cr>
+
 " Complete_version:
 "   You can find the complete configuration,
 "   including all the plugins used, here:
@@ -42,23 +45,37 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-fugitive'
+" Bag of mappings
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
-Plug 'ctrlpvim/ctrlp.vim' " TODO: I don't really use that anymore.
-Plug 'nanotech/jellybeans.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'romainl/vim-qf'
+
+" Snippets (don't really use them, but eh)
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+" Navigation
+Plug 'tpope/vim-vinegar'
+Plug 'ctrlpvim/ctrlp.vim' " TODO: I don't really use that anymore.
+Plug 'mileszs/ack.vim'
+
+" Theming
+Plug 'nanotech/jellybeans.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Filetype specific plugins
 Plug 'pearofducks/ansible-vim'
-Plug 'mileszs/ack.vim'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
-Plug 'romainl/vim-qf'
+
+" Tag management
+Plug 'ludovicchabant/vim-gutentags'
+
+" 'IDE' features
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -88,6 +105,10 @@ set hidden
 " In this configuration, it is particularly useful for the tagbar plugin
 set updatetime=500
 
+" For some stupid reason, vim requires the term to begin with "xterm", so the
+" automatically detected "rxvt-unicode-256color" doesn't work.
+set term=xterm-256color
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " User interface
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -113,7 +134,7 @@ set laststatus=2
 
 " Format the status line
 " This status line comes from Pierre Bourdon's vimrc
-set statusline=%f\ %l\|%c\ %m%=%p%%\ (%Y%R)
+"set statusline=%f\ %l\|%c\ %m%=%p%%\ (%Y%R)
 
 " Enhance command line completion
 set wildmenu
