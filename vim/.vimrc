@@ -70,12 +70,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'pearofducks/ansible-vim'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
+Plug '5long/pytest-vim-compiler'
 
 " Tag management
 Plug 'ludovicchabant/vim-gutentags'
 
 " 'IDE' features
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
+Plug 'janko/vim-test'
 
 call plug#end()
 
@@ -297,3 +300,14 @@ nmap [q <Plug>(qf_qf_previous)
 nmap ]q <Plug>(qf_qf_next)
 nmap [l <Plug>(qf_loc_previous)
 nmap ]l <Plug>(qf_loc_next)
+
+" Mappings for vim-test
+nmap <silent> <leader>ts :TestSuite<cr>
+
+" Tell vim-test to use dispatch to run our tests
+"
+let test#strategy = "dispatch"
+
+" Tell Dispatch to use the pytest compiler when we call pytest (the compiler
+" file looks for py.test instead of pytest)
+let g:dispatch_compilers = {'pytest': 'pytest'}
