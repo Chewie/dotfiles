@@ -176,7 +176,7 @@ set wrap
 set textwidth=79
 
 " Disable preview window on completion
-set completeopt=menu,longest
+set completeopt=longest,menuone
 
 " Highlight current line
 set cursorline
