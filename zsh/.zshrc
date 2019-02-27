@@ -93,3 +93,11 @@ export LC_ALL='en_US.UTF-8'
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="/snap/bin:$PATH"
+
+
+if [ -d "$HOME/.pyenv/bin" ]
+then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
