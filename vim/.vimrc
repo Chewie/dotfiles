@@ -71,6 +71,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
 Plug '5long/pytest-vim-compiler'
+Plug 'hashivim/vim-terraform'
 
 " Tag management
 Plug 'ludovicchabant/vim-gutentags'
