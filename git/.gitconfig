@@ -42,3 +42,9 @@
 [push]
     default = simple
     followTags = true
+
+[merge]
+    tool = fugitive
+
+[mergetool "fugitive"]
+    cmd = vim -f -c "Gvdiffsplit!" "$MERGED"
