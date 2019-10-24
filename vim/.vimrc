@@ -6,9 +6,6 @@
 "   Kévin "Chewie" Sztern
 "   <chewie@deliciousmuffins.net>
 "
-" Launch fugitive's gstatus
-noremap <leader>gs :Gstatus<cr>
-
 " Complete_version:
 "   You can find the complete configuration,
 "   including all the plugins used, here:
@@ -302,11 +299,13 @@ nmap ]q <Plug>(qf_qf_next)
 nmap [l <Plug>(qf_loc_previous)
 nmap ]l <Plug>(qf_loc_next)
 
+" Launch fugitive's gstatus
+noremap <leader>gs :Gstatus<cr>
+
 " Mappings for vim-test
 nmap <silent> <leader>ts :TestSuite<cr>
 
 " Tell vim-test to use dispatch to run our tests
-"
 let test#strategy = "dispatch"
 
 " Tell Dispatch to use the pytest compiler when we call pytest (the compiler
