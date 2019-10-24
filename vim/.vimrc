@@ -311,3 +311,8 @@ let test#strategy = "dispatch"
 " Tell Dispatch to use the pytest compiler when we call pytest (the compiler
 " file looks for py.test instead of pytest)
 let g:dispatch_compilers = {'pytest': 'pytest'}
+
+" Add the termdebug built-in plugin
+if version >= 801
+    packadd termdebug
+endif
