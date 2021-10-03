@@ -8,6 +8,7 @@ stow tmux
 stow vim
 stow X
 stow zsh
+stow readline
 
 # Awesome needs to be symlinked to ~/.config/awesome
 mkdir -p ~/.config/awesome
