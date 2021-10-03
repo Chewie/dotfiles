@@ -69,6 +69,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
 Plug '5long/pytest-vim-compiler'
 Plug 'hashivim/vim-terraform'
+Plug 'rust-lang/rust.vim'
 
 " Tag management
 Plug 'ludovicchabant/vim-gutentags'
@@ -316,3 +317,5 @@ let g:dispatch_compilers = {'pytest': 'pytest'}
 if version >= 801
     packadd termdebug
 endif
+
+let g:rustfmt_autosave = 1
