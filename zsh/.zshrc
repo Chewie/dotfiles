@@ -77,6 +77,7 @@ alias rat='tmux attach-session'
 alias se='sudoedit'
 alias ip='ip -c'
 alias k='kubectl'
+alias mk='microk8s.kubectl'
 
 # Exports
 export PROMPT='%F{207}%n% %F{75}@%F{207}%m% %F{75}[%F{214}%~% %F{75}]%F{75}$%f '
