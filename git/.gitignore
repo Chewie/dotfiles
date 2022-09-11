@@ -5,3 +5,4 @@
 *.pyc
 .ssh/*
 .vim/.netrwhist
+tags
