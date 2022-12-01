@@ -70,6 +70,9 @@ npmd ()
     unset NPM_ENV
 }
 
+# Prompt
+export PROMPT='%F{207}%n% %F{75}@%F{207}%m% %F{75}[%F{214}%~% %F{75}]%F{75}$%f '
+export RPROMPT='${vcs_info_msg_0_}'
 
 # Aliases
 alias ls='ls --color=auto'
@@ -78,12 +81,3 @@ alias se='sudoedit'
 alias ip='ip -c'
 alias k='kubectl'
 alias mk='microk8s.kubectl'
-
-# Exports
-export PROMPT='%F{207}%n% %F{75}@%F{207}%m% %F{75}[%F{214}%~% %F{75}]%F{75}$%f '
-export RPROMPT='${vcs_info_msg_0_}'
-export PAGER='most'
-export NNTPSERVER='news.epita.fr'
-export EDITOR='vim'
-export LANG='en_US.UTF-8'
-export LC_ALL='en_US.UTF-8'
