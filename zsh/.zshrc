@@ -95,10 +95,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="/snap/bin:$PATH"
 
-
-if [ -d "$HOME/.pyenv/bin" ]
-then
-    export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+if [ -d "$HOME/.asdf" ]; then
+    . $HOME/.asdf/asdf.sh
 fi
