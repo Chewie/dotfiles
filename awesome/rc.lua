@@ -551,7 +551,7 @@ awful.rules.rules = {
      { rule = { class = "Firefox" },
        properties = { screen = get_screen_from_tag("www"), tag = "www" } },
 
-     { rule = { class = "Franz" },
+     { rule = { class = "Ferdi" },
        properties = { screen = get_screen_from_tag("chat"), tag = "chat" } },
 
      { rule = { class = "Thunderbird" },
