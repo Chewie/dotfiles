@@ -10,6 +10,5 @@ stow X
 stow zsh
 stow readline
 
-# Awesome needs to be symlinked to ~/.config/awesome
-mkdir -p ~/.config/awesome
-stow -t ~/.config/awesome awesome
+# stuff in xdg must be symlinked to XDG_CONFIG_HOME (defaults to ~/.config)
+stow -t ${XDG_CONFIG_HOME:-~/.config} xdg
