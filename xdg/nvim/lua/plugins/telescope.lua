@@ -11,10 +11,20 @@ return {
                 cond = vim.fn.executable 'make' == 1
             },
             'benfowler/telescope-luasnip.nvim',
+            'nvim-telescope/telescope-ui-select.nvim',
         },
         config = function()
-            require('telescope').setup {}
+            require('telescope').setup {
+                extensions = {
+                    ["ui-select"] = {
+                        require("telescope.themes").get_dropdown {
+                            -- even more opts
+                        }
+                    }
+                }
+            }
             require('telescope').load_extension('luasnip')
+            require('telescope').load_extension('ui-select')
 
             -- Enable telescope fzf native, if installed
             pcall(require('telescope').load_extension, 'fzf')
