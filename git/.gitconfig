@@ -5,9 +5,6 @@
 [color]
     ui = true
 
-[core]
-    excludesfile = ~/.gitignore
-
 [alias]
     st = status
     ci = commit -a
@@ -40,8 +37,9 @@
     status = false
 
 [push]
-    default = simple
+    default = upstream
     followTags = true
+    autoSetupRemote = true
 
 [merge]
     tool = fugitive
