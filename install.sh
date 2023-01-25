@@ -2,7 +2,6 @@
 
 # Symlink to home via stow
 stow ctags
-stow git
 stow hg
 stow tmux
 stow vim
