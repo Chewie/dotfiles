@@ -41,6 +41,9 @@
     followTags = true
     autoSetupRemote = true
 
+[status]
+    showUntrackedFiles = all
+
 [merge]
     tool = fugitive
 
