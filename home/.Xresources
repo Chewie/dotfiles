@@ -5,6 +5,6 @@ URxvt.foreground: White
 URxvt.transparent: true
 URxvt.shading: 20
 URxvt.urgentOnBell: true
+URxvt.color4: #5f87b7
 URxvt.color12: #87afdf
-URxvt.color4: #87afdf
 URxvt.perl-ext-common: default,font-size
