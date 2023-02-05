@@ -1,0 +1,8 @@
+xset s off&
+picom -b
+nm-applet&
+mate-power-manager&
+mate-volume-control-status-icon&
+redshift-gtk&
+lxqt-policykit-agent&
+1password&
