@@ -75,7 +75,14 @@ export PROMPT='%F{207}%n% %F{75}@%F{207}%m% %F{75}[%F{214}%~% %F{75}]%F{75}$%f '
 export RPROMPT='${vcs_info_msg_0_}'
 
 # Aliases
-alias ls='ls --color=auto'
+if command -v exa &> /dev/null; then
+    alias ls='exa'
+else
+    alias ls='ls --color=auto'
+fi
+if command -v bat &> /dev/null; then
+    alias cat='bat --paging=never'
+fi
 alias rat='tmux attach-session'
 alias se='sudoedit'
 alias ip='ip -c'
