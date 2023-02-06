@@ -10,7 +10,7 @@ zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' rehash true
-zstyle :compinstall filename '/home/chewie/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -19,6 +19,11 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+setopt inc_append_history
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_find_no_dups
+setopt hist_ignore_space
 setopt extendedglob
 unsetopt beep
 bindkey -e
