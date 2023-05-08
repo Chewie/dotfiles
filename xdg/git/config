@@ -1,9 +1,6 @@
 [user]
     name = Kévin Sztern
-    email = sztern.kevin@gmail.com
-
-[color]
-    ui = true
+    email = contact@kevinsztern.fr
 
 [alias]
     st = status
@@ -33,9 +30,6 @@
     t = tag
     ui = update-index
 
-[pager]
-    status = false
-
 [push]
     default = upstream
     followTags = true
@@ -49,3 +43,5 @@
 
 [mergetool "fugitive"]
     cmd = vim -f -c "Gvdiffsplit!" "$MERGED"
+
+; vim: ft=gitconfig
