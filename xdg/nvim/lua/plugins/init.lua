@@ -22,6 +22,7 @@ return {
     'tpope/vim-unimpaired',
     'tpope/vim-fugitive',
     'romainl/vim-qf',
+    'rfratto/vim-river',
     { 'numToStr/Comment.nvim', config = true },
     { 'stevearc/oil.nvim', config = true },
 }
