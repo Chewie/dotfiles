@@ -15,3 +15,4 @@ try_run mate-volume-control-status-icon
 try_run redshift-gtk
 try_run lxqt-policykit-agent
 try_run 1password
+try_run blueman-applet
