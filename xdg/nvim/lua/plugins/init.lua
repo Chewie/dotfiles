@@ -13,6 +13,7 @@ return {
         build = ':TSUpdate',
         config = function()
             require('nvim-treesitter.configs').setup {
+                ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
                 highlight = { enable = true }
             }
         end,
@@ -28,4 +29,10 @@ return {
     { 'simrat39/rust-tools.nvim', config = true },
     { 'terrastruct/d2-vim',lazy = false },
     'hashivim/vim-terraform',
+    {
+        'lukas-reineke/indent-blankline.nvim',
+        main = 'ibl',
+        opts = {},
+    },
+    'towolf/vim-helm',
 }
