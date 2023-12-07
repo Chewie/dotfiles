@@ -20,7 +20,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt inc_append_history
-setopt share_history
 setopt hist_ignore_all_dups
 setopt hist_find_no_dups
 setopt hist_ignore_space
