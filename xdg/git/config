@@ -1,6 +1,19 @@
 [user]
     name = Kévin Sztern
     email = contact@kevinsztern.fr
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILqxkZcp4kyvKPSv1C0Y6FfC9em3/fqdf1YKFlPMgJWe
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    program = "/opt/1Password/op-ssh-sign"
+
+[init]
+    defaultBranch = main
+
+[commit]
+    gpgsign = true
 
 [alias]
     st = status
