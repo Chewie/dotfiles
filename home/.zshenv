@@ -5,6 +5,7 @@ path=(/snap/bin $path)
 path=(~/.cargo/bin $path)
 path=(~/.krew/bin $path)
 path=(~/.local/bin $path)
+path=(~/.arkade/bin $path)
 
 if [ -d "$HOME/.asdf" ]; then
     . $HOME/.asdf/asdf.sh
