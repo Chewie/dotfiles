@@ -89,9 +89,15 @@ if command -v exa &> /dev/null; then
 else
     alias ls='ls --color=auto'
 fi
+
 if command -v bat &> /dev/null; then
     alias cat='bat --paging=never'
 fi
+
+if command -v podman &> /dev/null; then
+alias docker='podman'
+fi
+
 alias rat='tmux attach-session'
 alias se='sudoedit'
 alias ip='ip -c'
