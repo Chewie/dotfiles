@@ -78,6 +78,11 @@ npmd ()
 export PROMPT='%F{207}%n% %F{75}@%F{207}%m% %F{75}[%F{214}%~% %F{75}]%F{75}$%f '
 export RPROMPT='${vcs_info_msg_0_}'
 
+
+if command -v direnv &> /dev/null; then
+    eval "$(direnv hook zsh)"
+fi
+
 # Aliases
 if command -v exa &> /dev/null; then
     alias ls='exa'
