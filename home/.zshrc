@@ -95,7 +95,7 @@ if command -v bat &> /dev/null; then
 fi
 
 if command -v podman &> /dev/null; then
-alias docker='podman'
+    alias docker='podman'
 fi
 
 alias rat='tmux attach-session'
@@ -103,4 +103,8 @@ alias se='sudoedit'
 alias ip='ip -c'
 alias k='kubectl'
 alias mk='microk8s.kubectl'
-alias vim='nvim'
+
+if command -v podman &> /dev/null; then
+    alias vim='nvim'
+    alias view='nvim -R'
+fi
