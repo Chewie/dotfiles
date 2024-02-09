@@ -104,7 +104,7 @@ alias ip='ip -c'
 alias k='kubectl'
 alias mk='microk8s.kubectl'
 
-if command -v podman &> /dev/null; then
+if command -v nvim &> /dev/null; then
     alias vim='nvim'
     alias view='nvim -R'
 fi
