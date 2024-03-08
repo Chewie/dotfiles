@@ -5,58 +5,129 @@ return {
             -- Automatically install LSPs to stdpath for neovim
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
+            'WhoIsSethDaniel/mason-tool-installer.nvim',
 
             -- Useful status updates for LSP
             { 'j-hui/fidget.nvim', config = true },
 
             -- Additional lua configuration, makes nvim stuff amazing
             { 'folke/neodev.nvim', config = true },
+
+            -- { 'creativenull/efmls-configs-nvim' },
+            {
+                'nvimtools/none-ls.nvim',
+                dependencies = {
+                    'nvim-lua/plenary.nvim'
+                },
+                config = function()
+                    require('null-ls').setup({
+                        sources = {
+                            require("null-ls").builtins.formatting.prettierd
+                        }
+                    })
+                end,
+            }
         },
         config = function()
-            require('mason').setup()
-            require('mason-lspconfig').setup()
+            vim.api.nvim_create_autocmd('LspAttach', {
+                group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+                callback = function(event)
+                    local nmap = function(keys, func, desc)
+                        if desc then
+                            desc = 'LSP: ' .. desc
+                        end
 
-            local on_attach = function(_, bufnr)
-                local nmap = function(keys, func, desc)
-                    if desc then
-                        desc = 'LSP: ' .. desc
+                        vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })
                     end
 
-                    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
-                end
+                    nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+                    nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
-                nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-                nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+                    nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+                    nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+                    nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+                    nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+                    nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+                    nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+                    nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols,
+                        '[W]orkspace [S]ymbols')
 
-                nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-                nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-                nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-                nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-                nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
-                nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-                nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+                    nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+                    nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
-                nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-                nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
-
-                nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
-                nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
-                nmap('<leader>wl', function()
-                    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-                end, '[W]orkspace [L]ist Folders')
-                nmap('<leader>f', function() vim.lsp.buf.format { async = true } end, '[F]ormat')
-            end
-
-            local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-            require('mason-lspconfig').setup_handlers {
-                function(server_name)
-                    require('lspconfig')[server_name].setup {
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                        -- settings = servers[server_name],
-                    }
+                    nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
+                    nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
+                    nmap('<leader>wl', function()
+                        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+                    end, '[W]orkspace [L]ist Folders')
+                    nmap('<leader>f', function()
+                        vim.lsp.buf.format {
+                            async = true,
+                            filter = function(client) return client.name ~= "tsserver" end,
+                        }
+                    end, '[F]ormat')
                 end,
+            })
+
+
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+
+            local servers = {
+                clangd = {},
+                rust_analyzer = {},
+                helm_ls = {},
+                eslint = {},
+                tsserver = {
+                    capabilities = {
+                        documentFormattingProvider = false,
+                    },
+                },
+                lua_ls = {
+                    -- cmd = {...},
+                    -- filetypes { ...},
+                    -- capabilities = {},
+                    settings = {
+                        Lua = {
+                            runtime = { version = 'LuaJIT' },
+                            workspace = {
+                                checkThirdParty = false,
+                                -- Tells lua_ls where to find all the Lua files that you have loaded
+                                -- for your neovim configuration.
+                                -- library = {
+                                --     '${3rd}/luv/library',
+                                --     unpack(vim.api.nvim_get_runtime_file('', true)),
+                                -- },
+                                -- If lua_ls is really slow on your computer, you can try this instead:
+                                library = { vim.env.VIMRUNTIME },
+                            },
+                            completion = {
+                                callSnippet = 'Replace',
+                            },
+                            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+                            -- diagnostics = { disable = { 'missing-fields' } },
+                        },
+                    },
+                },
+            }
+
+            require('mason').setup()
+
+            local ensure_installed = vim.tbl_keys(servers or {})
+            vim.list_extend(ensure_installed, {
+                'prettierd',
+            })
+            require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+            require('mason-lspconfig').setup {
+                handlers = {
+                    function(server_name)
+                        local server = servers[server_name] or {}
+
+                        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+                        require('lspconfig')[server_name].setup(server)
+                    end,
+                }
             }
         end
     }

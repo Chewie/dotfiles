@@ -136,4 +136,4 @@ vim.opt.cinoptions = "(0,u0,U0,t0,g0,N-s"
 
 
 -- Trigger file reload even if file changed externally
-vim.api.nvim_create_autocmd("FocusGained", {command = "checktime"})
+vim.api.nvim_create_autocmd("FocusGained", { command = "checktime" })

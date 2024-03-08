@@ -1,7 +1,7 @@
 return {
     {
         'EdenEast/nightfox.nvim',
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        lazy = false,    -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
             -- load the colorscheme here
@@ -12,8 +12,10 @@ return {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
         config = function()
+            ---@diagnostic disable-next-line: missing-fields
             require('nvim-treesitter.configs').setup {
                 ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+                auto_install = true,
                 highlight = { enable = true }
             }
         end,
@@ -24,10 +26,10 @@ return {
     'tpope/vim-fugitive',
     'romainl/vim-qf',
     'rfratto/vim-river',
-    { 'numToStr/Comment.nvim', config = true },
-    { 'stevearc/oil.nvim', config = true },
+    { 'numToStr/Comment.nvim',    config = true },
+    { 'stevearc/oil.nvim',        config = true },
     { 'simrat39/rust-tools.nvim', config = true },
-    { 'terrastruct/d2-vim',lazy = false },
+    { 'terrastruct/d2-vim',       lazy = false },
     'hashivim/vim-terraform',
     {
         'lukas-reineke/indent-blankline.nvim',
