@@ -37,4 +37,45 @@ return {
         opts = {},
     },
     'towolf/vim-helm',
+    {
+        'folke/trouble.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeoutlen = 300
+        end,
+        config = true,
+    },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    },
+    -- {
+    --     "nvim-tree/nvim-tree.lua",
+    --     dependencies = {
+    --         "nvim-tree/nvim-web-devicons",
+    --     },
+    --     config = function()
+    --         require("nvim-tree").setup {}
+    --     end,
+    -- },
+    -- {
+    --     "echasnovski/mini.files",
+    --     version = false,
+    --     config = {}
+    -- },
 }

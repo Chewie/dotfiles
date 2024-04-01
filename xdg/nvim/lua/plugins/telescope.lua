@@ -20,7 +20,7 @@ return {
                         require("telescope.themes").get_dropdown {
                             -- even more opts
                         }
-                    }
+                    },
                 }
             }
             require('telescope').load_extension('luasnip')
@@ -29,5 +29,5 @@ return {
             -- Enable telescope fzf native, if installed
             pcall(require('telescope').load_extension, 'fzf')
         end
-    }
+    },
 }

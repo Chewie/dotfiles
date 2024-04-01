@@ -20,13 +20,17 @@ return {
                     'nvim-lua/plenary.nvim'
                 },
                 config = function()
-                    require('null-ls').setup({
+                    local null_ls = require('null-ls')
+                    null_ls.setup({
                         sources = {
-                            require("null-ls").builtins.formatting.prettierd
+                            -- null_ls.builtins.formatting.prettierd,
+                            null_ls.builtins.diagnostics.hadolint,
+                            null_ls.builtins.diagnostics.terraform_validate,
                         }
                     })
                 end,
-            }
+            },
+            { "folke/neodev.nvim", config = true },
         },
         config = function()
             vim.api.nvim_create_autocmd('LspAttach', {
@@ -62,7 +66,8 @@ return {
                     end, '[W]orkspace [L]ist Folders')
                     nmap('<leader>f', function()
                         vim.lsp.buf.format {
-                            async = true,
+                            bufnr = event.buf,
+                            -- async = true,
                             filter = function(client) return client.name ~= "tsserver" end,
                         }
                     end, '[F]ormat')
@@ -77,30 +82,21 @@ return {
                 clangd = {},
                 rust_analyzer = {},
                 helm_ls = {},
-                eslint = {},
-                tsserver = {
-                    capabilities = {
-                        documentFormattingProvider = false,
-                    },
-                },
+                bashls = {},
+                dockerls = {},
+                jsonls = {},
+                terraformls = {},
+                yamlls = {},
+                -- eslint = {},
+                biome = {},
+                tsserver = {},
+                dagger = {},
                 lua_ls = {
                     -- cmd = {...},
                     -- filetypes { ...},
                     -- capabilities = {},
                     settings = {
                         Lua = {
-                            runtime = { version = 'LuaJIT' },
-                            workspace = {
-                                checkThirdParty = false,
-                                -- Tells lua_ls where to find all the Lua files that you have loaded
-                                -- for your neovim configuration.
-                                -- library = {
-                                --     '${3rd}/luv/library',
-                                --     unpack(vim.api.nvim_get_runtime_file('', true)),
-                                -- },
-                                -- If lua_ls is really slow on your computer, you can try this instead:
-                                library = { vim.env.VIMRUNTIME },
-                            },
                             completion = {
                                 callSnippet = 'Replace',
                             },
@@ -115,6 +111,7 @@ return {
 
             local ensure_installed = vim.tbl_keys(servers or {})
             vim.list_extend(ensure_installed, {
+                'hadolint',
                 'prettierd',
             })
             require('mason-tool-installer').setup { ensure_installed = ensure_installed }
