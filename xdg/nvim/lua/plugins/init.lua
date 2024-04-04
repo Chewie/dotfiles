@@ -27,7 +27,12 @@ return {
     'romainl/vim-qf',
     'rfratto/vim-river',
     { 'numToStr/Comment.nvim',    config = true },
-    { 'stevearc/oil.nvim',        config = true },
+    {
+        'stevearc/oil.nvim',
+        opts = {
+            experimental_watch_for_changes = true,
+        }
+    },
     { 'simrat39/rust-tools.nvim', config = true },
     { 'terrastruct/d2-vim',       lazy = false },
     'hashivim/vim-terraform',
