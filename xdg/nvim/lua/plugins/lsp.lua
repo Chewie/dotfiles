@@ -91,6 +91,7 @@ return {
                 biome = {},
                 tsserver = {},
                 dagger = {},
+                gopls = {},
                 lua_ls = {
                     -- cmd = {...},
                     -- filetypes { ...},
