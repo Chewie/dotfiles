@@ -399,7 +399,23 @@ globalkeys = gears.table.join(
               {description = "show the menubar", group = "launcher"}),
 
     awful.key({ modkey }, "Print", function() awful.spawn("gnome-screenshot") end,
-              { description = "take a screenshot", group = "misc"})
+              { description = "take a screenshot", group = "misc"}),
+
+    awful.key({ modkey }, "i", function() awful.spawn("xtrlock") end,
+              { description = "EMERGENCY CAT BUTTON", group = "misc"}),
+
+    awful.key({ modkey }, "u", function() awful.spawn("slock") end,
+              { description = "lock screen", group = "misc"}),
+
+
+    awful.key({ }, "XF86AudioLowerVolume", function() awful.spawn("amixer set Master 5%-") end,
+              { description = "Lower volume", group = "audio"}),
+
+    awful.key({ }, "XF86AudioRaiseVolume", function() awful.spawn("amixer set Master 5%+") end,
+              { description = "Raise volume", group = "audio"}),
+
+    awful.key({ }, "XF86AudioMute", function() awful.spawn("amixer set Master toggle") end,
+              { description = "Mute volume", group = "audio"})
 )
 
 clientkeys = gears.table.join(
