@@ -1,0 +1,36 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x404040"
+blue = "0x87afdf"
+cyan = "0x00ffff"
+green = "0x00ff00"
+magenta = "0xff00ff"
+red = "0xff0000"
+white = "0xffffff"
+yellow = "0xffff00"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x5f87b7"
+cyan = "0x00cdcd"
+green = "0x00cd00"
+magenta = "0xcd00cd"
+red = "0xcd0000"
+white = "0xfaebd7"
+yellow = "0xcdcd00"
+
+[colors.primary]
+background = "0x000000"
+foreground = "0xffffff"
+
+[font]
+size = 8.0
+
+[font.normal]
+family = "DejaVuSansM Nerd Font"
+
+[window]
+dynamic_title = true
+opacity = 0.8
