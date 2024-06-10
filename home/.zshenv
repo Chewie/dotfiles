@@ -18,7 +18,12 @@ if [ -f "$HOME/.config/op/plugins.sh" ]; then
     source $HOME/.config/op/plugins.sh
 fi
 
+if command -v nvim &> /dev/null; then
+    export EDITOR='nvim'
+else
+    export EDITOR='vim'
+fi
+
 export PAGER='most'
-export EDITOR='vim'
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
