@@ -25,7 +25,7 @@ return {
                         sources = {
                             -- null_ls.builtins.formatting.prettierd,
                             null_ls.builtins.diagnostics.hadolint,
-                            null_ls.builtins.diagnostics.terraform_validate,
+                            -- null_ls.builtins.diagnostics.terraform_validate,
                         }
                     })
                 end,
@@ -44,6 +44,8 @@ return {
                         vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })
                     end
 
+                    local client = vim.lsp.get_client_by_id(event.data.client_id)
+
                     nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
                     nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
@@ -56,7 +58,6 @@ return {
                     nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols,
                         '[W]orkspace [S]ymbols')
 
-                    nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
                     nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
                     nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
@@ -68,9 +69,14 @@ return {
                         vim.lsp.buf.format {
                             bufnr = event.buf,
                             -- async = true,
-                            filter = function(client) return client.name ~= "tsserver" end,
+                            filter = function(c) return c.name ~= "tsserver" end,
                         }
                     end, '[F]ormat')
+                    if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+                        nmap('<leader>th', function()
+                            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
+                        end, '[T]oggle Inlay [H]ints')
+                    end
                 end,
             })
 
@@ -87,6 +93,7 @@ return {
                 jsonls = {},
                 terraformls = {},
                 yamlls = {},
+                -- ansiblels = {},
                 -- eslint = {},
                 biome = {},
                 tsserver = {},
