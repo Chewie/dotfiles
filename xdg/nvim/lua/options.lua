@@ -2,7 +2,6 @@
 -- General parameters
 --------------------------------------------------
 
-
 -- Write the file when we leave the buffer
 vim.opt.autowrite = true
 
@@ -15,7 +14,6 @@ vim.opt.swapfile = false
 -- Set the time (in milliseconds) spent idle until various actions occur
 -- In this configuration, it is particularly useful for the tagbar plugin
 vim.opt.updatetime = 500
-
 
 ---------------------------------------------------
 -- User interface
@@ -51,7 +49,7 @@ vim.opt.wildmode = "longest:full,list:full"
 vim.opt.visualbell = true
 
 -- Color the column after textwidth, usually the 80th
-vim.opt.colorcolumn = '+1'
+vim.opt.colorcolumn = "+1"
 
 -- Display whitespace characters
 vim.opt.list = true
@@ -64,7 +62,7 @@ vim.opt.fillchars = "vert:│"
 vim.g.load_doxygen_syntax = 1
 
 -- Allow mouse use in vim
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Briefly show matching braces, parens, etc
 vim.opt.showmatch = true
@@ -116,7 +114,6 @@ vim.opt.shiftwidth = 4
 -- Always indent to a multiple of shiftwidth
 vim.opt.shiftround = true
 
-
 -- The number of spaces inserted when you press tab.
 -- -1 means the same value as shiftwidth
 vim.opt.softtabstop = -1
@@ -133,7 +130,6 @@ vim.opt.autoindent = true
 
 -- This one is complicated. See :help cinoptions-values for details
 vim.opt.cinoptions = "(0,u0,U0,t0,g0,N-s"
-
 
 -- Trigger file reload even if file changed externally
 vim.api.nvim_create_autocmd("FocusGained", { command = "checktime" })

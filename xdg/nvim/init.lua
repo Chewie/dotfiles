@@ -3,7 +3,7 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.fn.system({
         "git",
         "clone",
@@ -17,9 +17,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
     change_detection = {
-        notify = false
-    }
+        notify = false,
+    },
 })
 
 require("options")
-require('mappings')
+require("mappings")

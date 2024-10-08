@@ -1,13 +1,13 @@
 return {
     {
-        'nvim-lualine/lualine.nvim',
+        "nvim-lualine/lualine.nvim",
         opts = {
             options = {
                 icons_enabled = false,
-                theme = 'carbonfox',
-                component_separators = '|',
-                section_separators = '',
-            }
-        }
-    }
+                theme = "carbonfox",
+                component_separators = "|",
+                section_separators = "",
+            },
+        },
+    },
 }

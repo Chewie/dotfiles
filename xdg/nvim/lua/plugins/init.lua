@@ -1,7 +1,7 @@
 return {
     {
-        'EdenEast/nightfox.nvim',
-        lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+        "EdenEast/nightfox.nvim",
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
             -- load the colorscheme here
@@ -9,46 +9,54 @@ return {
         end,
     },
     {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
         config = function()
-            -- -@diagnostic disable-next-line: missing-fields
-            require('nvim-treesitter.configs').setup {
+            ---@diagnostic disable-next-line: missing-fields
+            require("nvim-treesitter.configs").setup({
                 ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
                 auto_install = true,
-                highlight = { enable = true }
-            }
+                highlight = { enable = true },
+            })
         end,
     },
-    -- 'sheerun/vim-polyglot',
-    'tpope/vim-surround',
-    'tpope/vim-repeat',
-    'tpope/vim-unimpaired',
-    'tpope/vim-fugitive',
-    'romainl/vim-qf',
-    'rfratto/vim-river',
-    -- { 'numToStr/Comment.nvim',    config = true },
+    "tpope/vim-surround",
+    "tpope/vim-repeat",
+    "tpope/vim-unimpaired",
+    "tpope/vim-fugitive",
+    "romainl/vim-qf",
+    "rfratto/vim-river",
     {
-        'stevearc/oil.nvim',
+        "stevearc/oil.nvim",
+        keys = {
+            {
+                "-",
+                function()
+                    require("oil").open()
+                end,
+                mode = "n",
+                desc = "Open parent directory",
+            },
+        },
         opts = {
             experimental_watch_for_changes = true,
-        }
+        },
     },
-    { 'simrat39/rust-tools.nvim', config = true },
-    { 'terrastruct/d2-vim',       lazy = false },
-    'hashivim/vim-terraform',
+    { "simrat39/rust-tools.nvim", config = true },
+    { "terrastruct/d2-vim", lazy = false },
+    "hashivim/vim-terraform",
     {
-        'lukas-reineke/indent-blankline.nvim',
-        main = 'ibl',
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
         opts = {
             scope = {
                 show_start = false,
                 show_end = false,
-            }
+            },
         },
     },
     {
-        'towolf/vim-helm',
+        "towolf/vim-helm",
         ft = "helm",
     },
     {
@@ -91,16 +99,30 @@ return {
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
-        init = function()
-            vim.o.timeoutlen = 300
-        end,
-        config = true,
+        opts = {},
+        keys = {
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "[?] Show all buffer keymaps",
+            },
+        },
     },
     {
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = {
+
             -- add any options here
+            lsp = {
+                override = {
+                    ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+                    ["vim.lsp.util.stylize_markdown"] = true,
+                    ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+                },
+            },
             routes = {
                 {
                     filter = {
@@ -119,7 +141,7 @@ return {
             --   `nvim-notify` is only needed, if you want to use the notification view.
             --   If not available, we use `mini` as the fallback
             "rcarriga/nvim-notify",
-        }
+        },
     },
     {
         "ray-x/go.nvim",
@@ -132,22 +154,64 @@ return {
             require("go").setup()
         end,
         event = { "CmdlineEnter" },
-        ft = { "go", 'gomod' },
-        build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+        ft = { "go", "gomod" },
+        build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
     },
-    -- {
-    --     "nvim-tree/nvim-tree.lua",
-    --     dependencies = {
-    --         "nvim-tree/nvim-web-devicons",
-    --     },
-    --     config = function()
-    --         require("nvim-tree").setup {}
-    --     end,
-    -- },
-    -- {
-    --     "echasnovski/mini.files",
-    --     version = false,
-    --     config = {}
-    -- },
-    -- 'pearofducks/ansible-vim',
+    {
+        "stevearc/conform.nvim",
+        event = { "BufWritePre" },
+        cmd = { "ConformInfo" },
+        keys = {
+            {
+                -- Customize or remove this keymap to your liking
+                "<leader>f",
+                function()
+                    require("conform").format({ async = true })
+                end,
+                mode = "",
+                desc = "Format buffer",
+            },
+        },
+        -- This will provide type hinting with LuaLS
+        ---@module "conform"
+        ---@type conform.setupOpts
+        opts = {
+            -- Define your formatters
+            formatters_by_ft = {
+                lua = { "stylua" },
+                python = { "isort", "black" },
+                javascript = { "prettierd", "prettier", stop_after_first = true },
+            },
+            -- Set default options
+            default_format_opts = {
+                lsp_format = "fallback",
+            },
+            -- Set up format-on-save
+            -- format_on_save = { timeout_ms = 500 },
+            -- Customize formatters
+            formatters = {
+                shfmt = {
+                    prepend_args = { "-i", "2" },
+                },
+            },
+        },
+        init = function()
+            -- If you want the formatexpr, here is the place to set it
+            vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+        end,
+    },
+    {
+        "mfussenegger/nvim-lint",
+        config = function()
+            require("lint").linters_by_ft = {
+                dockerfile = { "hadolint" },
+            }
+
+            vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+                callback = function()
+                    require("lint").try_lint()
+                end,
+            })
+        end,
+    },
 }
