@@ -201,13 +201,13 @@ local function get_tags()
     if screen:count() == 1 then
         tags = {
             for_screen = {
-                { "www", "mail", "server", "chat", "5", "6", "7", "8", "work" },
+                { "www", "mail", "server", "chat", "5", "6", "7", "8", "password" },
             }
         }
     elseif screen:count() == 2 then
         tags = {
             for_screen = {
-                { "www", "server", "3", "chat", "5", "6", "7", "8", "work" },
+                { "www", "server", "3", "chat", "5", "6", "7", "8", "password" },
                 { "1", "mail", "3", "4", "5", "6", "7", "8", "9" },
             }
         }
@@ -215,7 +215,7 @@ local function get_tags()
         tags = {
             for_screen = {
                 { "www", "2", "3", "chat", "5", "6", "7", "8", "9" },
-                { "1", "mail", "3", "4", "5", "6", "7", "8", "work" },
+                { "1", "mail", "3", "4", "5", "6", "7", "8", "password" },
                 { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
             }
         }
@@ -578,6 +578,9 @@ awful.rules.rules = {
 
      { rule = { class = "Thunderbird" },
        properties = { screen = get_screen_from_tag("mail"), tag = "mail" } },
+
+     { rule = { class = "1Password" },
+       properties = { screen = get_screen_from_tag("password"), tag = "password" } },
 }
 -- }}}
 
