@@ -179,7 +179,7 @@ return {
             -- Define your formatters
             formatters_by_ft = {
                 lua = { "stylua" },
-                python = { "isort", "black" },
+                python = { "ruff_format" },
                 javascript = { "prettierd", "prettier", stop_after_first = true },
             },
             -- Set default options
@@ -187,7 +187,7 @@ return {
                 lsp_format = "fallback",
             },
             -- Set up format-on-save
-            -- format_on_save = { timeout_ms = 500 },
+            format_on_save = { timeout_ms = 500 },
             -- Customize formatters
             formatters = {
                 shfmt = {
@@ -214,4 +214,5 @@ return {
             })
         end,
     },
+    "kcl-lang/kcl.nvim",
 }

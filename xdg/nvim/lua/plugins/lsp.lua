@@ -85,7 +85,7 @@ return {
                 dockerls = {},
                 jsonls = {},
                 terraformls = {},
-                yamlls = {},
+                -- yamlls = {},
                 -- ansiblels = {},
                 -- eslint = {},
                 biome = {},
@@ -93,6 +93,8 @@ return {
                 dagger = {},
                 gopls = {},
                 pyright = {},
+                ruff = {},
+                kcl = {},
                 lua_ls = {
                     -- cmd = {...},
                     -- filetypes { ...},
@@ -128,6 +130,9 @@ return {
                         require("lspconfig")[server_name].setup(server)
                     end,
                 },
+            })
+            require("lspconfig").kcl.setup({
+                root_dir = require("lspconfig.util").root_pattern("kcl.mod"),
             })
         end,
     },
