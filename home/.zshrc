@@ -94,9 +94,10 @@ if command -v bat &> /dev/null; then
     alias cat='bat --paging=never'
 fi
 
-if command -v podman &> /dev/null; then
-    alias docker='podman'
-fi
+# FIXME: Some tools (e.g. crossplane) need the real docker
+# if command -v podman &> /dev/null; then
+#     alias docker='podman'
+# fi
 
 alias rat='tmux attach-session'
 alias se='sudoedit'
