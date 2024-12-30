@@ -101,6 +101,8 @@ return {
                     },
                 },
                 ruff = {},
+                -- FIXME: mason installation is currently broken
+                -- kcl = {},
                 lua_ls = {
                     -- cmd = {...},
                     -- filetypes { ...},
@@ -167,9 +169,8 @@ return {
                     end,
                 },
             })
-            require("lspconfig").kcl.setup({
-                root_dir = require("lspconfig.util").root_pattern("kcl.mod"),
-            })
+            -- FIXME: mason installation is currently broken
+            require("lspconfig").kcl.setup({})
         end,
     },
 }
