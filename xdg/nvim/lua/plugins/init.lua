@@ -181,6 +181,7 @@ return {
                 lua = { "stylua" },
                 python = { "ruff_format" },
                 javascript = { "prettierd", "prettier", stop_after_first = true },
+                markdown = { "mdformat" },
             },
             -- Set default options
             default_format_opts = {
@@ -192,6 +193,9 @@ return {
             formatters = {
                 shfmt = {
                     prepend_args = { "-i", "2" },
+                },
+                mdformat = {
+                    prepend_args = { "--wrap", "80" },
                 },
             },
         },

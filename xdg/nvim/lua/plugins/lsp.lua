@@ -153,6 +153,7 @@ return {
                 "hadolint",
                 "prettierd",
                 "stylua",
+                "mdformat",
             })
             require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
