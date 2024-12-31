@@ -43,6 +43,9 @@
     t = tag
     ui = update-index
 
+[pull]
+    rebase = true
+
 [push]
     default = upstream
     followTags = true
