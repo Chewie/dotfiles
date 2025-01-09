@@ -219,4 +219,11 @@ return {
         end,
     },
     "kcl-lang/kcl.nvim",
+    {
+        "stevearc/quicker.nvim",
+        event = "FileType qf",
+        ---@module "quicker"
+        ---@type quicker.SetupOptions
+        opts = {},
+    },
 }
