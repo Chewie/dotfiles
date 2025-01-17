@@ -74,8 +74,8 @@ return {
                 end,
             })
 
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+            -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+            -- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
             local servers = {
                 clangd = {},
@@ -133,21 +133,6 @@ return {
                 desc = "LSP: Disable hover capability from Ruff",
             })
 
-            vim.api.nvim_create_autocmd("LspAttach", {
-                group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),
-                callback = function(args)
-                    local client = vim.lsp.get_client_by_id(args.data.client_id)
-                    if client == nil then
-                        return
-                    end
-                    if client.name == "ruff" then
-                        -- Disable hover in favor of Pyright
-                        client.server_capabilities.hoverProvider = false
-                    end
-                end,
-                desc = "LSP: Disable hover capability from Ruff",
-            })
-
             require("mason").setup()
 
             local ensure_installed = vim.tbl_keys(servers or {})
@@ -164,7 +149,7 @@ return {
                     function(server_name)
                         local server = servers[server_name] or {}
 
-                        server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+                        server.capabilities = require("blink.cmp").get_lsp_capabilities(server.capabilities, true)
                         require("lspconfig")[server_name].setup(server)
                     end,
                 },
