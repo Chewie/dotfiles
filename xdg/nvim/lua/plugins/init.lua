@@ -262,6 +262,20 @@ return {
                 nerd_font_variant = "mono",
             },
 
+            completion = {
+                list = {
+                    selection = {
+                        preselect = false,
+                        auto_insert = true,
+                    },
+                },
+                accept = {
+                    auto_brackets = {
+                        enabled = false,
+                    },
+                },
+            },
+
             -- Default list of enabled providers defined so that you can extend it
             -- elsewhere in your config, without redefining it, due to `opts_extend`
             sources = {
