@@ -98,6 +98,9 @@ return {
                             -- Using Ruff's import organizer
                             disableOrganizeImports = true,
                         },
+                        python = {
+                            pythonPath = ".venv/bin/python",
+                        },
                     },
                 },
                 ruff = {},
