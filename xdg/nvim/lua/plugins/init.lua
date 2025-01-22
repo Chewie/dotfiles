@@ -24,7 +24,7 @@ return {
     "tpope/vim-repeat",
     "tpope/vim-unimpaired",
     "tpope/vim-fugitive",
-    "romainl/vim-qf",
+    -- "romainl/vim-qf",
     "rfratto/vim-river",
     {
         "stevearc/oil.nvim",
@@ -157,67 +157,6 @@ return {
         ft = { "go", "gomod" },
         build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
     },
-    {
-        "stevearc/conform.nvim",
-        event = { "BufWritePre" },
-        cmd = { "ConformInfo" },
-        keys = {
-            {
-                -- Customize or remove this keymap to your liking
-                "<leader>f",
-                function()
-                    require("conform").format({ async = true })
-                end,
-                mode = "",
-                desc = "[F]ormat buffer",
-            },
-        },
-        -- This will provide type hinting with LuaLS
-        ---@module "conform"
-        ---@type conform.setupOpts
-        opts = {
-            -- Define your formatters
-            formatters_by_ft = {
-                lua = { "stylua" },
-                python = { "ruff_format" },
-                javascript = { "prettierd", "prettier", stop_after_first = true },
-                markdown = { "mdformat" },
-            },
-            -- Set default options
-            default_format_opts = {
-                lsp_format = "fallback",
-            },
-            -- Set up format-on-save
-            format_on_save = { timeout_ms = 500 },
-            -- Customize formatters
-            formatters = {
-                shfmt = {
-                    prepend_args = { "-i", "2" },
-                },
-                mdformat = {
-                    prepend_args = { "--wrap", "80" },
-                },
-            },
-        },
-        init = function()
-            -- If you want the formatexpr, here is the place to set it
-            vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-        end,
-    },
-    {
-        "mfussenegger/nvim-lint",
-        config = function()
-            require("lint").linters_by_ft = {
-                dockerfile = { "hadolint" },
-            }
-
-            vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-                callback = function()
-                    require("lint").try_lint()
-                end,
-            })
-        end,
-    },
     "kcl-lang/kcl.nvim",
     {
         "stevearc/quicker.nvim",
@@ -225,63 +164,5 @@ return {
         ---@module "quicker"
         ---@type quicker.SetupOptions
         opts = {},
-    },
-    {
-        "saghen/blink.cmp",
-        -- optional: provides snippets for the snippet source
-        dependencies = "rafamadriz/friendly-snippets",
-
-        -- use a release tag to download pre-built binaries
-        version = "*",
-        -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-        build = "cargo build --release",
-        -- If you use nix, you can build from source using latest nightly rust with:
-        -- build = 'nix run .#build-plugin',
-
-        ---@module 'blink.cmp'
-        ---@type blink.cmp.Config
-        opts = {
-            -- 'default' for mappings similar to built-in completion
-            -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
-            -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
-            -- See the full "keymap" documentation for information on defining your own keymap.
-            keymap = {
-                preset = "default",
-                cmdline = {
-                    preset = "super-tab",
-                },
-            },
-
-            appearance = {
-                -- Sets the fallback highlight groups to nvim-cmp's highlight groups
-                -- Useful for when your theme doesn't support blink.cmp
-                -- Will be removed in a future release
-                use_nvim_cmp_as_default = true,
-                -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-                -- Adjusts spacing to ensure icons are aligned
-                nerd_font_variant = "mono",
-            },
-
-            completion = {
-                list = {
-                    selection = {
-                        preselect = false,
-                        auto_insert = true,
-                    },
-                },
-                accept = {
-                    auto_brackets = {
-                        enabled = false,
-                    },
-                },
-            },
-
-            -- Default list of enabled providers defined so that you can extend it
-            -- elsewhere in your config, without redefining it, due to `opts_extend`
-            sources = {
-                default = { "lsp", "path", "snippets", "buffer" },
-            },
-        },
-        opts_extend = { "sources.default" },
     },
 }
