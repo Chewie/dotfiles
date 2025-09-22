@@ -20,7 +20,9 @@ return {
             -- See the full "keymap" documentation for information on defining your own keymap.
             keymap = {
                 preset = "default",
-                cmdline = {
+            },
+            cmdline = {
+                keymap = {
                     preset = "super-tab",
                 },
             },
