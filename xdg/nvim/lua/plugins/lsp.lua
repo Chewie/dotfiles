@@ -83,8 +83,17 @@ return {
                 helm_ls = {},
                 bashls = {},
                 dockerls = {},
-                jsonls = {},
-                terraformls = {},
+                jsonls = {
+                    settings = {
+                        json = {
+                            format = {
+                                enable = false,
+                            },
+                        },
+                    },
+                },
+                -- terraformls = {},
+                tofu_ls = {},
                 -- yamlls = {},
                 -- ansiblels = {},
                 -- eslint = {},
