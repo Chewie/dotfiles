@@ -8,42 +8,37 @@ return {
             vim.cmd([[colorscheme carbonfox]])
         end,
     },
+    -- {
+    --     "rachartier/tiny-cmdline.nvim",
+    --     config = function()
+    --         vim.o.cmdheight = 0
+    --         require("tiny-cmdline").setup({
+    --             native_types
+    --             on_reposition = require("tiny-cmdline").adapters.blink,
+    --         })
+    --     end,
+    -- },
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        config = function()
-            ---@diagnostic disable-next-line: missing-fields
-            require("nvim-treesitter.configs").setup({
-                ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
-                auto_install = true,
-                highlight = { enable = true },
-            })
-        end,
+        lazy = false,
+        branch = "main",
     },
     "tpope/vim-surround",
     "tpope/vim-repeat",
     "tpope/vim-unimpaired",
     "tpope/vim-fugitive",
-    -- "romainl/vim-qf",
-    "rfratto/vim-river",
+    "grafana/vim-alloy",
     {
         "stevearc/oil.nvim",
-        keys = {
-            {
-                "-",
-                function()
-                    require("oil").open()
-                end,
-                mode = "n",
-                desc = "Open parent directory",
-            },
-        },
         opts = {
-            experimental_watch_for_changes = true,
+            lsp_file_methods = {
+                enabled = true,
+                autosave_changes = true,
+            },
+            watch_for_changes = true,
         },
     },
-    { "simrat39/rust-tools.nvim", config = true },
-    { "terrastruct/d2-vim", lazy = false },
     "hashivim/vim-terraform",
     {
         "lukas-reineke/indent-blankline.nvim",
@@ -58,43 +53,6 @@ return {
     {
         "towolf/vim-helm",
         ft = "helm",
-    },
-    {
-        "folke/trouble.nvim",
-        opts = {}, -- for default options, refer to the configuration section for custom setup.
-        cmd = "Trouble",
-        keys = {
-            {
-                "<leader>xx",
-                "<cmd>Trouble diagnostics toggle<cr>",
-                desc = "Diagnostics (Trouble)",
-            },
-            {
-                "<leader>xX",
-                "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-                desc = "Buffer Diagnostics (Trouble)",
-            },
-            {
-                "<leader>cs",
-                "<cmd>Trouble symbols toggle focus=false<cr>",
-                desc = "Symbols (Trouble)",
-            },
-            {
-                "<leader>cl",
-                "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-                desc = "LSP Definitions / references / ... (Trouble)",
-            },
-            {
-                "<leader>xL",
-                "<cmd>Trouble loclist toggle<cr>",
-                desc = "Location List (Trouble)",
-            },
-            {
-                "<leader>xQ",
-                "<cmd>Trouble qflist toggle<cr>",
-                desc = "Quickfix List (Trouble)",
-            },
-        },
     },
     {
         "folke/which-key.nvim",
@@ -143,20 +101,6 @@ return {
             "rcarriga/nvim-notify",
         },
     },
-    {
-        "ray-x/go.nvim",
-        dependencies = { -- optional packages
-            "ray-x/guihua.lua",
-            "neovim/nvim-lspconfig",
-            "nvim-treesitter/nvim-treesitter",
-        },
-        config = function()
-            require("go").setup()
-        end,
-        event = { "CmdlineEnter" },
-        ft = { "go", "gomod" },
-        build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
-    },
     "kcl-lang/kcl.nvim",
     {
         "stevearc/quicker.nvim",
@@ -164,5 +108,15 @@ return {
         ---@module "quicker"
         ---@type quicker.SetupOptions
         opts = {},
+    },
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {
+            picker = {
+                enabled = true,
+            },
+        },
     },
 }

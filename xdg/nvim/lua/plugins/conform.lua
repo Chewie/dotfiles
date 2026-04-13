@@ -21,9 +21,10 @@ return {
             -- Define your formatters
             formatters_by_ft = {
                 lua = { "stylua" },
-                python = { "ruxx_fix", "ruff_format", "ruff_organize_imports" },
+                python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
                 javascript = { "prettierd", "prettier", stop_after_first = true },
                 markdown = { "mdformat" },
+                typescript = { "biome-check" },
             },
             -- Set default options
             default_format_opts = {

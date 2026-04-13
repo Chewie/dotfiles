@@ -1,3 +1,4 @@
+require("vim._core.ui2").enable({})
 -- Set "," as map leader
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
@@ -23,3 +24,17 @@ require("lazy").setup("plugins", {
 
 require("options")
 require("mappings")
+require("diagnostics")
+
+vim.filetype.add({
+    filename = {
+        ["Tiltfile"] = "tiltfile.bzl",
+    },
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = require("nvim-treesitter").get_installed(),
+    callback = function()
+        vim.treesitter.start()
+    end,
+})

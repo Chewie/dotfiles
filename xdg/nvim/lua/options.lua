@@ -3,17 +3,17 @@
 --------------------------------------------------
 
 -- Write the file when we leave the buffer
-vim.opt.autowrite = true
+vim.o.autowrite = true
 
 -- Disable backups, we have source control for that
-vim.opt.backup = false
+vim.o.backup = false
 
 -- Disable swapfiles too
-vim.opt.swapfile = false
+vim.o.swapfile = false
 
 -- Set the time (in milliseconds) spent idle until various actions occur
 -- In this configuration, it is particularly useful for the tagbar plugin
-vim.opt.updatetime = 500
+vim.o.updatetime = 500
 
 ---------------------------------------------------
 -- User interface
@@ -21,83 +21,83 @@ vim.opt.updatetime = 500
 
 -- Set the minimal amount of lignes under and above the cursor
 -- Useful for keeping context when moving with j/k
-vim.opt.scrolloff = 5
+vim.o.scrolloff = 5
 
 -- Show current mode
-vim.opt.showmode = true
+vim.o.showmode = true
 
 -- Show command being executed
-vim.opt.showcmd = true
+vim.o.showcmd = true
 
 -- Show line number
-vim.opt.number = true
+vim.o.number = true
 
 -- Always show status line
-vim.opt.laststatus = 2
+vim.o.laststatus = 2
 
 -- Format the status line
 -- This status line comes from Pierre Bourdon's vimrc
 --set statusline=%f\ %l\|%c\ %m%=%p%%\ (%Y%R)
 
 -- Enhance command line completion
-vim.opt.wildmenu = true
+vim.o.wildmenu = true
 
 -- Set completion behavior, see :help wildmode for details
-vim.opt.wildmode = "longest:full,list:full"
+vim.o.wildmode = "longest:full,list:full"
 
 -- Disable bell completely
-vim.opt.visualbell = true
+vim.o.visualbell = true
 
 -- Color the column after textwidth, usually the 80th
-vim.opt.colorcolumn = "+1"
+vim.o.colorcolumn = "+1"
 
 -- Display whitespace characters
-vim.opt.list = true
+vim.o.list = true
 
-vim.opt.listchars = "tab:>─,eol:¬,trail: ,nbsp:¤"
+vim.o.listchars = "tab:>─,eol:¬,trail: ,nbsp:¤"
 
-vim.opt.fillchars = "vert:│"
+vim.o.fillchars = "vert:│"
 
 -- Enable Doxygen highlighting
 vim.g.load_doxygen_syntax = 1
 
 -- Allow mouse use in vim
-vim.opt.mouse = "a"
+vim.o.mouse = "a"
 
 -- Briefly show matching braces, parens, etc
-vim.opt.showmatch = true
+vim.o.showmatch = true
 
 -- Enable line wrapping
-vim.opt.wrap = true
+vim.o.wrap = true
 
 -- Wrap on column 80
-vim.opt.textwidth = 79
+vim.o.textwidth = 79
 
 -- Disable preview window on completion
-vim.opt.completeopt = "longest,menuone"
+vim.o.completeopt = "longest,menuone"
 
 -- Highlight current line
-vim.opt.cursorline = true
+vim.o.cursorline = true
 
-vim.opt.splitright = true
+vim.o.splitright = true
 
-vim.opt.splitbelow = true
+vim.o.splitbelow = true
 
 --"""""""""""""""""""""""""""""""""""""""""""""""""
 -- Search options
 --"""""""""""""""""""""""""""""""""""""""""""""""""
 
 -- Ignore case on search
-vim.opt.ignorecase = true
+vim.o.ignorecase = true
 
 -- Ignore case unless there is an uppercase letter in the pattern
-vim.opt.smartcase = true
+vim.o.smartcase = true
 
 -- Move cursor to the matched string
-vim.opt.incsearch = true
+vim.o.incsearch = true
 
 -- Don't highlight matched strings
-vim.opt.hlsearch = false
+vim.o.hlsearch = false
 
 --"""""""""""""""""""""""""""""""""""""""""""""""""
 -- Indentation options
@@ -106,30 +106,30 @@ vim.opt.hlsearch = false
 -- The length of a tab
 -- This is for documentation purposes only,
 -- do not change the default value of 8, ever.
-vim.opt.tabstop = 8
+vim.o.tabstop = 8
 
 -- The number of spaces inserted/removed when using < or >
-vim.opt.shiftwidth = 4
+vim.o.shiftwidth = 4
 --
 -- Always indent to a multiple of shiftwidth
-vim.opt.shiftround = true
+vim.o.shiftround = true
 
 -- The number of spaces inserted when you press tab.
 -- -1 means the same value as shiftwidth
-vim.opt.softtabstop = -1
+vim.o.softtabstop = -1
 
 -- Insert spaces instead of tabs
-vim.opt.expandtab = true
+vim.o.expandtab = true
 
 -- When tabbing manually, use shiftwidth instead of tabstop and softtabstop
-vim.opt.smarttab = true
+vim.o.smarttab = true
 
 -- Set basic indenting (i.e. copy the indentation of the previous line)
 -- When filetype detection didn't find a fancy indentation scheme
-vim.opt.autoindent = true
+vim.o.autoindent = true
 
 -- This one is complicated. See :help cinoptions-values for details
-vim.opt.cinoptions = "(0,u0,U0,t0,g0,N-s"
+vim.o.cinoptions = "(0,u0,U0,t0,g0,N-s"
 
 -- Trigger file reload even if file changed externally
 vim.api.nvim_create_autocmd("FocusGained", { command = "checktime" })
