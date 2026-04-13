@@ -24,6 +24,12 @@ return {
         lazy = false,
         branch = "main",
     },
+    {
+        "mks-h/treesitter-autoinstall.nvim",
+        opts = {
+            highlight = true,
+        },
+    },
     "tpope/vim-surround",
     "tpope/vim-repeat",
     "tpope/vim-unimpaired",

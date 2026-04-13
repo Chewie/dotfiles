@@ -31,10 +31,3 @@ vim.filetype.add({
         ["Tiltfile"] = "tiltfile.bzl",
     },
 })
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = require("nvim-treesitter").get_installed(),
-    callback = function()
-        vim.treesitter.start()
-    end,
-})

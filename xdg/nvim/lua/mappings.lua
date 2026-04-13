@@ -37,7 +37,6 @@ end, { desc = "Open parent directory" })
 
 vim.keymap.set("n", "gri", function()
     require("snacks.picker").lsp_implementations()
-    require("telescope.builtin")
 end, { desc = "Go to implementation" })
 
 vim.keymap.set("n", "grd", function()
