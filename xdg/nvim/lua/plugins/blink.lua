@@ -37,6 +37,12 @@ return {
                 },
             },
 
+            signature = {
+                enabled = true,
+                window = {
+                    show_documentation = true,
+                },
+            },
             appearance = {
                 -- Sets the fallback highlight groups to nvim-cmp's highlight groups
                 -- Useful for when your theme doesn't support blink.cmp

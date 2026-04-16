@@ -8,16 +8,15 @@ return {
             vim.cmd([[colorscheme carbonfox]])
         end,
     },
-    -- {
-    --     "rachartier/tiny-cmdline.nvim",
-    --     config = function()
-    --         vim.o.cmdheight = 0
-    --         require("tiny-cmdline").setup({
-    --             native_types
-    --             on_reposition = require("tiny-cmdline").adapters.blink,
-    --         })
-    --     end,
-    -- },
+    {
+        "rachartier/tiny-cmdline.nvim",
+        config = function()
+            vim.o.cmdheight = 0
+            require("tiny-cmdline").setup({
+                on_reposition = require("tiny-cmdline").adapters.blink,
+            })
+        end,
+    },
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
@@ -74,39 +73,39 @@ return {
             },
         },
     },
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        opts = {
-
-            -- add any options here
-            lsp = {
-                override = {
-                    ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-                    ["vim.lsp.util.stylize_markdown"] = true,
-                    ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
-                },
-            },
-            routes = {
-                {
-                    filter = {
-                        event = "msg_show",
-                        kind = "",
-                        find = "written",
-                    },
-                    opts = { skip = true },
-                },
-            },
-        },
-        dependencies = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
-            "rcarriga/nvim-notify",
-        },
-    },
+    -- {
+    --     "folke/noice.nvim",
+    --     event = "VeryLazy",
+    --     opts = {
+    --
+    --         -- add any options here
+    --         lsp = {
+    --             override = {
+    --                 ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+    --                 ["vim.lsp.util.stylize_markdown"] = true,
+    --                 ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+    --             },
+    --         },
+    --         routes = {
+    --             {
+    --                 filter = {
+    --                     event = "msg_show",
+    --                     kind = "",
+    --                     find = "written",
+    --                 },
+    --                 opts = { skip = true },
+    --             },
+    --         },
+    --     },
+    --     dependencies = {
+    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    --         "MunifTanjim/nui.nvim",
+    --         -- OPTIONAL:
+    --         --   `nvim-notify` is only needed, if you want to use the notification view.
+    --         --   If not available, we use `mini` as the fallback
+    --         "rcarriga/nvim-notify",
+    --     },
+    -- },
     "kcl-lang/kcl.nvim",
     {
         "stevearc/quicker.nvim",
@@ -122,7 +121,25 @@ return {
         opts = {
             picker = {
                 enabled = true,
+                win = {
+                    input = {
+                        keys = {
+                            ["<c-space>"] = { { "select_and_next", "list_up" }, mode = { "i", "n" } },
+                        },
+                    },
+                },
             },
+            toggle = {},
         },
+    },
+    {
+        "rachartier/tiny-cmdline.nvim",
+        config = function()
+            vim.o.cmdheight = 0
+            require("tiny-cmdline").setup({
+                on_reposition = require("tiny-cmdline").adapters.blink,
+                native_types = {},
+            })
+        end,
     },
 }
