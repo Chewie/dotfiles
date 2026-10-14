@@ -46,6 +46,9 @@
 [pull]
     rebase = true
 
+[rebase]
+    autostash = true
+
 [push]
     default = upstream
     followTags = true
