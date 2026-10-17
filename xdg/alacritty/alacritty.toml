@@ -1,3 +1,7 @@
+[general]
+
+import = ["local.toml"]
+
 [colors]
 draw_bold_text_with_bright_colors = true
 
@@ -26,7 +30,7 @@ background = "0x000000"
 foreground = "0xffffff"
 
 [font]
-size = 8.0
+# size = 11.25 # Overriden in local.toml
 
 [font.normal]
 family = "DejaVuSansM Nerd Font"
