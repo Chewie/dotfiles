@@ -3,6 +3,21 @@ layer-rule  {
     block-out-from "screencast"
 }
 
+layer-rule  {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="dms:blurwallpaper"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^noctalia-wallpaper"
+    place-within-backdrop true
+}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
@@ -21,4 +36,21 @@ window-rule {
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+
+window-rule {
+    match app-id="^com.danklinux.dms$"
+    open-floating true
+}
+
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
 }

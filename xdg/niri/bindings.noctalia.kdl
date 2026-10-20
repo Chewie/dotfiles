@@ -1,0 +1,12 @@
+binds {
+    Mod+R hotkey-overlay-title="Run an Application: Application Launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+U hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "noctalia msg session lock"; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "noctalia msg volume-up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "noctalia msg volume-down"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; }
+
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; }
+}
