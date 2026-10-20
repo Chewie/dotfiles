@@ -6,28 +6,28 @@ import = ["local.toml"]
 draw_bold_text_with_bright_colors = true
 
 [colors.bright]
-black = "0x404040"
-blue = "0x87afdf"
-cyan = "0x00ffff"
-green = "0x00ff00"
-magenta = "0xff00ff"
-red = "0xff0000"
-white = "0xffffff"
-yellow = "0xffff00"
+black = "#404040"
+blue = "#87afdf"
+cyan = "#00ffff"
+green = "#00ff00"
+magenta = "#ff00ff"
+red = "#ff0000"
+white = "#ffffff"
+yellow = "#ffff00"
 
 [colors.normal]
-black = "0x000000"
-blue = "0x5f87b7"
-cyan = "0x00cdcd"
-green = "0x00cd00"
-magenta = "0xcd00cd"
-red = "0xcd0000"
-white = "0xfaebd7"
-yellow = "0xcdcd00"
+black = "#000000"
+blue = "#5f87b7"
+cyan = "#00cdcd"
+green = "#00cd00"
+magenta = "#cd00cd"
+red = "#cd0000"
+white = "#faebd7"
+yellow = "#cdcd00"
 
 [colors.primary]
-background = "0x000000"
-foreground = "0xffffff"
+background = "#000000"
+foreground = "#ffffff"
 
 [font]
 # size = 11.25 # Overriden in local.toml
