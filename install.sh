@@ -47,6 +47,6 @@ done
 # stuff in xdg must be symlinked to XDG_CONFIG_HOME (defaults to ~/.config)
 cfg=${XDG_CONFIG_HOME:-~/.config}
 mkdir -p "$cfg"
-for f in home/*; do
+for f in xdg/*; do
     link "$f" "$cfg/${f##*/}"
 done
