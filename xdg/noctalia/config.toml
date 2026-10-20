@@ -1,0 +1,117 @@
+[bar.default]
+center = [ "taskbar" ]
+end = [
+    "group:g1",
+    "tray",
+    "notifications",
+    "clipboard",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "control-center",
+    "clock",
+    "session"
+]
+margin_ends = 0
+start = [ "workspaces" ]
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "cpu", "ram" ]
+    opacity = 1.0
+    padding = 6.0
+
+[calendar]
+enabled = false
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[location]
+auto_locate = true
+
+[lockscreen]
+transition = [ "fade" ]
+transition_duration = 300
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+
+[nightlight]
+enabled = true
+
+[shell]
+niri_overview_type_to_launch_enabled = true
+polkit_agent = true
+readline_shortcuts = false
+settings_expand_all_groups = true
+settings_window_translucent = true
+
+    [shell.panel]
+    clipboard_placement = "attached"
+    control_center_position = "bottom_left"
+    open_near_click_clipboard = true
+    open_near_click_control_center = true
+    open_near_click_session = true
+
+[theme]
+builtin = "Tokyo-Night"
+community_palette = "Paradise"
+source = "community"
+
+    [theme.templates]
+    enable_builtin_templates = false
+
+[wallpaper]
+directory = "/home/chewie/.config/noctalia/wallpapers"
+
+    [wallpaper.default]
+    path = "/home/chewie/.config/noctalia/wallpapers/spider.jpg"
+
+    [wallpaper.last]
+    path = "/home/chewie/.config/noctalia/wallpapers/spider.jpg"
+
+[widget.active_window]
+enabled = false
+
+[widget.ram]
+stat = "ram_pct"
+
+[widget.taskbar]
+only_active_workspace = true
+show_window_title = true
