@@ -61,13 +61,10 @@ return {
                 helm_ls = {},
                 bashls = {},
                 dockerls = {},
-                -- terraformls = {},
                 tofu_ls = {},
                 -- yamlls = {},
-                -- ansiblels = {},
                 biome = {},
-                -- tsgo = {},
-                ts_ls = {},
+                tsc = {},
                 dagger = {},
                 gopls = {
                     settings = {
