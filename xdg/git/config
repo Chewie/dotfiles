@@ -63,4 +63,7 @@
 [mergetool "fugitive"]
     cmd = vim -f -c "Gvdiffsplit!" "$MERGED"
 
+[includeIf "gitdir:~/work/theseus/"]
+    path = ~/work/theseus/.gitconfig
+
 ; vim: ft=gitconfig
