@@ -9,15 +9,6 @@ return {
         end,
     },
     {
-        "rachartier/tiny-cmdline.nvim",
-        config = function()
-            vim.o.cmdheight = 0
-            require("tiny-cmdline").setup({
-                on_reposition = require("tiny-cmdline").adapters.blink,
-            })
-        end,
-    },
-    {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         lazy = false,
@@ -73,40 +64,6 @@ return {
             },
         },
     },
-    -- {
-    --     "folke/noice.nvim",
-    --     event = "VeryLazy",
-    --     opts = {
-    --
-    --         -- add any options here
-    --         lsp = {
-    --             override = {
-    --                 ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-    --                 ["vim.lsp.util.stylize_markdown"] = true,
-    --                 ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
-    --             },
-    --         },
-    --         routes = {
-    --             {
-    --                 filter = {
-    --                     event = "msg_show",
-    --                     kind = "",
-    --                     find = "written",
-    --                 },
-    --                 opts = { skip = true },
-    --             },
-    --         },
-    --     },
-    --     dependencies = {
-    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    --         "MunifTanjim/nui.nvim",
-    --         -- OPTIONAL:
-    --         --   `nvim-notify` is only needed, if you want to use the notification view.
-    --         --   If not available, we use `mini` as the fallback
-    --         "rcarriga/nvim-notify",
-    --     },
-    -- },
-    "kcl-lang/kcl.nvim",
     {
         "stevearc/quicker.nvim",
         event = "FileType qf",
@@ -141,5 +98,21 @@ return {
                 native_types = {},
             })
         end,
+    },
+    {
+        "catgoose/nvim-colorizer.lua",
+        event = "BufReadPre",
+        opts = {
+            options = {
+                parsers = {
+                    names = {
+                        enable = false,
+                    },
+                    hex = {
+                        rrggbbaa = true,
+                    },
+                },
+            },
+        },
     },
 }
