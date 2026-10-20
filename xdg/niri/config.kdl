@@ -165,4 +165,4 @@ include "colors.kdl"
 
 include optional=true "local.kdl"
 
-spawn-at-startup "noctalia"
+// spawn-at-startup "noctalia"

@@ -245,5 +245,5 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-// include "bindings.dms.kdl"
-include "bindings.noctalia.kdl"
+include "bindings.dms.kdl"
+// include "bindings.noctalia.kdl"
