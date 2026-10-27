@@ -39,7 +39,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^com.danklinux.dms$"
+    match app-id=r#"^dev\.duxlabs\.shell$"#
     open-floating true
 }
 
