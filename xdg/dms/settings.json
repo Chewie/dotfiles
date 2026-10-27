@@ -176,9 +176,10 @@
       "widgetFollowInterfaceStyle": true,
       "dot": false,
       "hideOnLastDisplay": false,
-      "rightClickAction": "settings",
+      "rightClickAction": "control-center",
       "barLengthMode": "full",
-      "widgetStyle": "pills"
+      "widgetStyle": "pills",
+      "clickActionFollowMouse": true
     },
     {
       "id": "dot1793122818420",
